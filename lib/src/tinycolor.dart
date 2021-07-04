@@ -167,7 +167,7 @@ class TinyColor {
     identical(this, other) ||
     other is TinyColor &&
     runtimeType == other.runtimeType &&
-    name == other.name;
+    color == other.color;
 
   @override
   int get hashCode => name.hashCode;
