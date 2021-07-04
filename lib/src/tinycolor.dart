@@ -172,5 +172,6 @@ class TinyColor {
   @override
   int get hashCode => name.hashCode;
 
+  @Deprecated('Use == instead.')
   bool equals(Object other) => this == other;
 }
