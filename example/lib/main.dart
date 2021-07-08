@@ -1,5 +1,3 @@
-import 'package:example/widgets/apply_method_item.dart';
-import 'package:example/widgets/color_chooser.dart';
 import 'package:flutter/material.dart';
 import 'package:tinycolor2/tinycolor2.dart';
 
@@ -12,7 +10,7 @@ class TinyColorApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'TinyColor2 Example',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -21,25 +19,11 @@ class TinyColorApp extends StatelessWidget {
   }
 }
 
-class ExamplePage extends StatefulWidget {
-  ExamplePage({Key? key}) : super(key: key);
-
-  @override
-  _ExamplePageState createState() => _ExamplePageState();
-}
-
-class _ExamplePageState extends State<ExamplePage> {
-  Color _color = Colors.red;
-  late List<TinyColor> _tinyColors;
-
-  @override
-  void initState() {
-    _initTinyColors();
-    super.initState();
-  }
-
+class ExamplePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var tinyColor = TinyColor(Colors.blue);
+
     return Scaffold(
       appBar: AppBar(
         title: Text("TinyColor2 Example"),
@@ -47,86 +31,51 @@ class _ExamplePageState extends State<ExamplePage> {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            ColorChooser(
-              initialColor: _color,
-              onColorChange: (color) {
-                setState(() {
-                  _color = color;
-                  _initTinyColors();
-                });
-              },
+            ListTile(
+              title: Text("Original color"),
+              trailing: CircleAvatar(
+                backgroundColor: tinyColor.color,
+              ),
             ),
-            ApplyMethodItem(
-              name: "lighten",
-              onButtonPressed: (value) {
-                setState(() =>
-                    _tinyColors[0] = _tinyColors[0].lighten(value.toInt()));
-              },
-              color: _tinyColors[0].color,
+            ListTile(
+              title: Text("lighten"),
+              trailing:
+                  CircleAvatar(backgroundColor: tinyColor.lighten().color),
             ),
-            ApplyMethodItem(
-              name: "brighten",
-              onButtonPressed: (value) {
-                setState(() =>
-                    _tinyColors[1] = _tinyColors[1].brighten(value.toInt()));
-              },
-              color: _tinyColors[1].color,
+            ListTile(
+              title: Text("brighten"),
+              trailing:
+                  CircleAvatar(backgroundColor: tinyColor.brighten().color),
             ),
-            ApplyMethodItem(
-              name: "darken",
-              onButtonPressed: (value) {
-                setState(() =>
-                    _tinyColors[2] = _tinyColors[2].darken(value.toInt()));
-              },
-              color: _tinyColors[2].color,
+            ListTile(
+              title: Text("darken"),
+              trailing: CircleAvatar(backgroundColor: tinyColor.darken().color),
             ),
-            ApplyMethodItem(
-              name: "tint",
-              onButtonPressed: (value) {
-                setState(
-                    () => _tinyColors[3] = _tinyColors[3].tint(value.toInt()));
-              },
-              color: _tinyColors[3].color,
+            ListTile(
+              title: Text("tint"),
+              trailing: CircleAvatar(backgroundColor: tinyColor.tint().color),
             ),
-            ApplyMethodItem(
-              name: "shade",
-              onButtonPressed: (value) {
-                setState(
-                    () => _tinyColors[4] = _tinyColors[4].shade(value.toInt()));
-              },
-              color: _tinyColors[4].color,
+            ListTile(
+              title: Text("shade"),
+              trailing: CircleAvatar(backgroundColor: tinyColor.shade().color),
             ),
-            ApplyMethodItem(
-              name: "desaturate",
-              onButtonPressed: (value) {
-                setState(() =>
-                    _tinyColors[5] = _tinyColors[5].desaturate(value.toInt()));
-              },
-              color: _tinyColors[5].color,
+            ListTile(
+              title: Text("desaturate"),
+              trailing:
+                  CircleAvatar(backgroundColor: tinyColor.desaturate().color),
             ),
-            ApplyMethodItem(
-              name: "saturate",
-              onButtonPressed: (value) {
-                setState(() =>
-                    _tinyColors[6] = _tinyColors[6].saturate(value.toInt()));
-              },
-              color: _tinyColors[6].color,
+            ListTile(
+              title: Text("saturate"),
+              trailing:
+                  CircleAvatar(backgroundColor: tinyColor.saturate().color),
             ),
-            ApplyMethodItem(
-              name: "spin",
-              defaultValue: 10.0,
-              onButtonPressed: (value) {
-                setState(() =>
-                    _tinyColors[7] = _tinyColors[7].spin(value.toDouble()));
-              },
-              color: _tinyColors[7].color,
+            ListTile(
+              title: Text("spin"),
+              trailing: CircleAvatar(backgroundColor: tinyColor.spin(90).color),
             ),
           ],
         ),
       ),
     );
   }
-
-  _initTinyColors() =>
-      _tinyColors = List.generate(8, (index) => TinyColor(_color));
 }
