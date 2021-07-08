@@ -40,34 +40,36 @@ class ExamplePage extends StatelessWidget {
             ListTile(
               title: Text("lighten"),
               trailing:
-                  CircleAvatar(backgroundColor: tinyColor.lighten().color),
+                  CircleAvatar(backgroundColor: tinyColor.lighten(20).color),
             ),
             ListTile(
               title: Text("brighten"),
               trailing:
-                  CircleAvatar(backgroundColor: tinyColor.brighten().color),
+                  CircleAvatar(backgroundColor: tinyColor.brighten(20).color),
             ),
             ListTile(
               title: Text("darken"),
-              trailing: CircleAvatar(backgroundColor: tinyColor.darken().color),
+              trailing:
+                  CircleAvatar(backgroundColor: tinyColor.darken(20).color),
             ),
             ListTile(
               title: Text("tint"),
-              trailing: CircleAvatar(backgroundColor: tinyColor.tint().color),
+              trailing: CircleAvatar(backgroundColor: tinyColor.tint(20).color),
             ),
             ListTile(
               title: Text("shade"),
-              trailing: CircleAvatar(backgroundColor: tinyColor.shade().color),
+              trailing:
+                  CircleAvatar(backgroundColor: tinyColor.shade(20).color),
             ),
             ListTile(
               title: Text("desaturate"),
               trailing:
-                  CircleAvatar(backgroundColor: tinyColor.desaturate().color),
+                  CircleAvatar(backgroundColor: tinyColor.desaturate(20).color),
             ),
             ListTile(
               title: Text("saturate"),
               trailing:
-                  CircleAvatar(backgroundColor: tinyColor.saturate().color),
+                  CircleAvatar(backgroundColor: tinyColor.saturate(20).color),
             ),
             ListTile(
               title: Text("spin"),
