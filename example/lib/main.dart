@@ -28,59 +28,57 @@ class ExamplePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("TinyColor2 Example"),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            _createListItem(
-              name: "Original color",
-              color: tinyColor.color,
-            ),
-            _createListItem(
-              name: "lighten",
-              color: tinyColor.lighten(20).color,
-            ),
-            _createListItem(
-              name: "brighten",
-              color: tinyColor.brighten(20).color,
-            ),
-            _createListItem(
-              name: "darken",
-              color: tinyColor.darken(20).color,
-            ),
-            _createListItem(
-              name: "tint",
-              color: tinyColor.tint(20).color,
-            ),
-            _createListItem(
-              name: "shade",
-              color: tinyColor.shade(20).color,
-            ),
-            _createListItem(
-              name: "desaturate",
-              color: tinyColor.desaturate(20).color,
-            ),
-            _createListItem(
-              name: "saturate",
-              color: tinyColor.saturate(20).color,
-            ),
-            _createListItem(
-              name: "greyscale",
-              color: tinyColor.greyscale().color,
-            ),
-            _createListItem(
-              name: "spin",
-              color: tinyColor.spin(90).color,
-            ),
-            _createListItem(
-              name: "compliment",
-              color: tinyColor.complement().color,
-            ),
-            _createListItem(
-              name: "mix",
-              color: tinyColor.mix(input: Colors.yellow, amount: 20).color,
-            ),
-          ],
-        ),
+      body: ListView(
+        children: <Widget>[
+          _createListItem(
+            name: "Original color",
+            color: tinyColor.color,
+          ),
+          _createListItem(
+            name: "lighten",
+            color: tinyColor.lighten(20).color,
+          ),
+          _createListItem(
+            name: "brighten",
+            color: tinyColor.brighten(20).color,
+          ),
+          _createListItem(
+            name: "darken",
+            color: tinyColor.darken(20).color,
+          ),
+          _createListItem(
+            name: "tint",
+            color: tinyColor.tint(20).color,
+          ),
+          _createListItem(
+            name: "shade",
+            color: tinyColor.shade(20).color,
+          ),
+          _createListItem(
+            name: "desaturate",
+            color: tinyColor.desaturate(20).color,
+          ),
+          _createListItem(
+            name: "saturate",
+            color: tinyColor.saturate(20).color,
+          ),
+          _createListItem(
+            name: "greyscale",
+            color: tinyColor.greyscale().color,
+          ),
+          _createListItem(
+            name: "spin",
+            color: tinyColor.spin(90).color,
+          ),
+          _createListItem(
+            name: "compliment",
+            color: tinyColor.complement().color,
+          ),
+          _createListItem(
+            name: "mix",
+            color: tinyColor.mix(input: Colors.yellow, amount: 20).color,
+          ),
+        ],
       ),
     );
   }
