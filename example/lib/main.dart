@@ -31,53 +31,54 @@ class ExamplePage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            ListTile(
-              title: Text("Original color"),
-              trailing: CircleAvatar(
-                backgroundColor: tinyColor.color,
-              ),
+            _createListItem(
+              name: "Original color",
+              color: tinyColor.color,
             ),
-            ListTile(
-              title: Text("lighten"),
-              trailing:
-                  CircleAvatar(backgroundColor: tinyColor.lighten(20).color),
+            _createListItem(
+              name: "lighten",
+              color: tinyColor.lighten(20).color,
             ),
-            ListTile(
-              title: Text("brighten"),
-              trailing:
-                  CircleAvatar(backgroundColor: tinyColor.brighten(20).color),
+            _createListItem(
+              name: "brighten",
+              color: tinyColor.brighten(20).color,
             ),
-            ListTile(
-              title: Text("darken"),
-              trailing:
-                  CircleAvatar(backgroundColor: tinyColor.darken(20).color),
+            _createListItem(
+              name: "darken",
+              color: tinyColor.darken(20).color,
             ),
-            ListTile(
-              title: Text("tint"),
-              trailing: CircleAvatar(backgroundColor: tinyColor.tint(20).color),
+            _createListItem(
+              name: "tint",
+              color: tinyColor.tint(20).color,
             ),
-            ListTile(
-              title: Text("shade"),
-              trailing:
-                  CircleAvatar(backgroundColor: tinyColor.shade(20).color),
+            _createListItem(
+              name: "shade",
+              color: tinyColor.shade(20).color,
             ),
-            ListTile(
-              title: Text("desaturate"),
-              trailing:
-                  CircleAvatar(backgroundColor: tinyColor.desaturate(20).color),
+            _createListItem(
+              name: "desaturate",
+              color: tinyColor.desaturate(20).color,
             ),
-            ListTile(
-              title: Text("saturate"),
-              trailing:
-                  CircleAvatar(backgroundColor: tinyColor.saturate(20).color),
+            _createListItem(
+              name: "saturate",
+              color: tinyColor.saturate(20).color,
             ),
-            ListTile(
-              title: Text("spin"),
-              trailing: CircleAvatar(backgroundColor: tinyColor.spin(90).color),
+            _createListItem(
+              name: "spin",
+              color: tinyColor.spin(90).color,
             ),
           ],
         ),
       ),
     );
   }
+
+  _createListItem({
+    required String name,
+    required Color color,
+  }) =>
+      ListTile(
+        title: Text(name),
+        trailing: CircleAvatar(backgroundColor: color),
+      );
 }
