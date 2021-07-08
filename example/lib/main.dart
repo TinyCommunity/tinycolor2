@@ -64,8 +64,20 @@ class ExamplePage extends StatelessWidget {
               color: tinyColor.saturate(20).color,
             ),
             _createListItem(
+              name: "greyscale",
+              color: tinyColor.greyscale().color,
+            ),
+            _createListItem(
               name: "spin",
               color: tinyColor.spin(90).color,
+            ),
+            _createListItem(
+              name: "compliment",
+              color: tinyColor.complement().color,
+            ),
+            _createListItem(
+              name: "mix",
+              color: tinyColor.mix(input: Colors.yellow, amount: 20).color,
             ),
           ],
         ),
