@@ -80,6 +80,8 @@ class TinyColor {
         h: hsl.h * 360, s: hsl.s, l: hsl.l, a: _color.alpha.toDouble());
   }
 
+  String toHex8() => _color.value.toRadixString(16).padLeft(8, '0');
+
   TinyColor clone() {
     return TinyColor(_color);
   }
@@ -170,7 +172,7 @@ class TinyColor {
     color == other.color;
 
   @override
-  int get hashCode => name.hashCode;
+  int get hashCode => color.hashCode;
 
   @Deprecated('Use == instead.')
   bool equals(Object other) => this == other;
