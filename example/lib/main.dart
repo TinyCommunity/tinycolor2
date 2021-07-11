@@ -22,7 +22,7 @@ class TinyColorApp extends StatelessWidget {
 class ExamplePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var tinyColor = TinyColor(Colors.blue);
+    var c = TinyColor(Colors.blue);
 
     return Scaffold(
       appBar: AppBar(
@@ -31,52 +31,65 @@ class ExamplePage extends StatelessWidget {
       body: ListView(
         children: <Widget>[
           _createListItem(
-            name: "Original color",
-            color: tinyColor.color,
+            title: "Original color",
+            subtitle: "var c = TinyColor(Colors.blue)",
+            color: c.color,
+            showOr: false,
           ),
           _createListItem(
-            name: "lighten",
-            color: tinyColor.lighten(20).color,
+            title: "c.lighten(20)",
+            subtitle: "Colors.blue.lighten(20)",
+            color: c.lighten(20).color,
           ),
           _createListItem(
-            name: "brighten",
-            color: tinyColor.brighten(20).color,
+            title: "c.brighten(20)",
+            subtitle: "Colors.blue.brighten(20)",
+            color: c.brighten(20).color,
           ),
           _createListItem(
-            name: "darken",
-            color: tinyColor.darken(20).color,
+            title: "c.darken(20)",
+            subtitle: "Colors.blue.darken(20)",
+            color: c.darken(20).color,
           ),
           _createListItem(
-            name: "tint",
-            color: tinyColor.tint(20).color,
+            title: "c.tint(20)",
+            subtitle: "Colors.blue.tint(20)",
+            color: c.tint(20).color,
           ),
           _createListItem(
-            name: "shade",
-            color: tinyColor.shade(20).color,
+            title: "c.shade(20)",
+            subtitle: "Colors.blue.shade(20)",
+            color: c.shade(20).color,
           ),
           _createListItem(
-            name: "desaturate",
-            color: tinyColor.desaturate(20).color,
+            title: "c.desaturate(20)",
+            subtitle: "Colors.blue.desaturate(20)",
+            color: c.desaturate(20).color,
           ),
           _createListItem(
-            name: "saturate",
-            color: tinyColor.saturate(20).color,
+            title: "c.saturate(20)",
+            subtitle: "Colors.blue.saturate(20)",
+            color: c.saturate(20).color,
           ),
           _createListItem(
-            name: "greyscale",
-            color: tinyColor.greyscale().color,
+            title: "c.greyscale()",
+            subtitle: "Colors.blue.greyscale()",
+            color: c.greyscale().color,
           ),
           _createListItem(
-            name: "spin",
-            color: tinyColor.spin(90).color,
+            title: "c.spin(90)",
+            subtitle: "Colors.blue.spin(90)",
+            color: c.spin(90).color,
           ),
           _createListItem(
-            name: "compliment",
-            color: tinyColor.complement().color,
+            title: "c.compliment()",
+            subtitle: "Colors.blue.complement()",
+            color: c.complement().color,
           ),
           _createListItem(
-            name: "mix",
-            color: tinyColor.mix(input: Colors.yellow, amount: 20).color,
+            title: "c.mix(input: Colors.yellow, amount: 20)",
+            subtitle: "Colors.blue.mix(Colors.yellow, 20)",
+            color: c.mix(input: Colors.yellow, amount: 20).color,
           ),
         ],
       ),
@@ -84,11 +97,14 @@ class ExamplePage extends StatelessWidget {
   }
 
   _createListItem({
-    required String name,
+    required String title,
+    required String subtitle,
     required Color color,
+    bool showOr = true,
   }) =>
       ListTile(
-        title: Text(name),
+        title: Text(title),
+        subtitle: Text("${showOr ? "or: " : ""}$subtitle"),
         trailing: CircleAvatar(backgroundColor: color),
       );
 }
