@@ -32,8 +32,8 @@ class ExamplePage extends StatelessWidget {
         children: <Widget>[
           _createListItem(
             title: "Original color",
-            subtitle:
-                "TinyColor tc = TinyColor(Colors.blue)\nColor c = Colors.blue",
+            subtitle: """TinyColor tc = TinyColor(Colors.blue)
+Color c = Colors.blue""",
             color: tc.color,
             showOr: false,
           ),
