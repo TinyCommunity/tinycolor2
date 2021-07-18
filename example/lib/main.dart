@@ -12,7 +12,7 @@ class TinyColorApp extends StatelessWidget {
     return MaterialApp(
       title: 'TinyColor2 Example',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.grey,
       ),
       home: ExamplePage(),
     );
