@@ -26,7 +26,7 @@ class ExamplePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("TinyColor2 Example"),
+        title: const Text("TinyColor2 Example"),
       ),
       body: ListView(
         children: <Widget>[
