@@ -22,7 +22,7 @@ class TinyColorApp extends StatelessWidget {
 class ExamplePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var c = TinyColor(Colors.blue);
+    TinyColor tc = TinyColor(Colors.blue);
 
     return Scaffold(
       appBar: AppBar(
@@ -32,64 +32,65 @@ class ExamplePage extends StatelessWidget {
         children: <Widget>[
           _createListItem(
             title: "Original color",
-            subtitle: "var c = TinyColor(Colors.blue)",
-            color: c.color,
+            subtitle:
+                "TinyColor tc = TinyColor(Colors.blue)\nColor c = Colors.blue",
+            color: tc.color,
             showOr: false,
           ),
           _createListItem(
-            title: "c.lighten(20)",
-            subtitle: "Colors.blue.lighten(20)",
-            color: c.lighten(20).color,
+            title: "tc.lighten(20)",
+            subtitle: "c.lighten(20)",
+            color: tc.lighten(20).color,
           ),
           _createListItem(
-            title: "c.brighten(20)",
-            subtitle: "Colors.blue.brighten(20)",
-            color: c.brighten(20).color,
+            title: "tc.brighten(20)",
+            subtitle: "c.brighten(20)",
+            color: tc.brighten(20).color,
           ),
           _createListItem(
-            title: "c.darken(20)",
-            subtitle: "Colors.blue.darken(20)",
-            color: c.darken(20).color,
+            title: "tc.darken(20)",
+            subtitle: "c.darken(20)",
+            color: tc.darken(20).color,
           ),
           _createListItem(
-            title: "c.tint(20)",
-            subtitle: "Colors.blue.tint(20)",
-            color: c.tint(20).color,
+            title: "tc.tint(20)",
+            subtitle: "c.tint(20)",
+            color: tc.tint(20).color,
           ),
           _createListItem(
-            title: "c.shade(20)",
-            subtitle: "Colors.blue.shade(20)",
-            color: c.shade(20).color,
+            title: "tc.shade(20)",
+            subtitle: "c.shade(20)",
+            color: tc.shade(20).color,
           ),
           _createListItem(
-            title: "c.desaturate(20)",
-            subtitle: "Colors.blue.desaturate(20)",
-            color: c.desaturate(20).color,
+            title: "tc.desaturate(20)",
+            subtitle: "c.desaturate(20)",
+            color: tc.desaturate(20).color,
           ),
           _createListItem(
-            title: "c.saturate(20)",
-            subtitle: "Colors.blue.saturate(20)",
-            color: c.saturate(20).color,
+            title: "tc.saturate(20)",
+            subtitle: "c.saturate(20)",
+            color: tc.saturate(20).color,
           ),
           _createListItem(
-            title: "c.greyscale()",
-            subtitle: "Colors.blue.greyscale()",
-            color: c.greyscale().color,
+            title: "tc.greyscale()",
+            subtitle: "c.greyscale()",
+            color: tc.greyscale().color,
           ),
           _createListItem(
-            title: "c.spin(90)",
-            subtitle: "Colors.blue.spin(90)",
-            color: c.spin(90).color,
+            title: "tc.spin(90)",
+            subtitle: "c.spin(90)",
+            color: tc.spin(90).color,
           ),
           _createListItem(
-            title: "c.compliment()",
-            subtitle: "Colors.blue.complement()",
-            color: c.complement().color,
+            title: "tc.compliment()",
+            subtitle: "c.complement()",
+            color: tc.complement().color,
           ),
           _createListItem(
-            title: "c.mix(input: Colors.yellow, amount: 20)",
-            subtitle: "Colors.blue.mix(Colors.yellow, 20)",
-            color: c.mix(input: Colors.yellow, amount: 20).color,
+            title: "tc.mix(input: Colors.yellow, amount: 20)",
+            subtitle: "c.mix(Colors.yellow, 20)",
+            color: tc.mix(input: Colors.yellow, amount: 20).color,
           ),
         ],
       ),
