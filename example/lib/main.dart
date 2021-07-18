@@ -22,7 +22,7 @@ class TinyColorApp extends StatelessWidget {
 class ExamplePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    TinyColor tc = TinyColor(Colors.blue);
+    final TinyColor tc = TinyColor(Colors.blue);
 
     return Scaffold(
       appBar: AppBar(
