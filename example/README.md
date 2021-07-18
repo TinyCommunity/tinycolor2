@@ -1,16 +1,15 @@
 # example
 
-A new Flutter project.
+This example project shows some basic usages of the `tinycolor2` package. 
 
-## Getting Started
+## Run project
 
-This project is a starting point for a Flutter application.
+### In your favourite  IDE
+Open `tinycolor2/example` in your favourite IDE and run it from there. While `tinycolor2`
+has not been migrated to null-safety, run it with the option `--no-sound-null-safety`.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### From terminal
+Navigate to `tinycolor2/example` in a terminal, then run:
+1. `flutter pub get`
+2. `flutter run --no-sound-null-safety` (no-sound-null-safety option is needed until `tinycolor2` 
+supports null-safety)
