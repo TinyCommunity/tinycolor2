@@ -12,6 +12,7 @@ dependencies:
   meta: ^1.2.2
   flutter:
     sdk: flutter
+  lint: ^1.5.3
 
 dev_dependencies:
   flutter_test:
