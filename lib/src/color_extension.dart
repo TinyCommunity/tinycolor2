@@ -1,13 +1,14 @@
 import 'package:flutter/painting.dart';
 import 'tinycolor.dart';
+import 'hsl_color.dart';
 
-/// Extends the Color class to allow direct TinyColor manipulation nativly
+/// Extends the Color class to allow direct TinyColor manipulation natively
 extension TinyColorExtension on Color {
   /// Converts standard Color to TinyColor object
   TinyColor toTinyColor() => TinyColor(this);
 
   HSVColor toHsv() => TinyColor(this).toHsv();
-  
+
   HslColor toHsl() => TinyColor(this).toHsl();
 
   /// Lighten the color a given amount, from 0 to 100. Providing 100 will always return white.
@@ -53,5 +54,8 @@ extension TinyColorExtension on Color {
   Color get compliment => TinyColor(this).complement().color;
 
   /// Blends the color with another color a given amount, from 0 - 100, default 50.
-  Color mix(Color toColor, [int amount = 50]) => TinyColor(this).mix(input: toColor, amount: amount).color;
+  Color mix(Color toColor, [int amount = 50]) => TinyColor(this).mix(
+    input: toColor,
+    amount: amount,
+  ).color;
 }
