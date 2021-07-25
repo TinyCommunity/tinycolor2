@@ -14,12 +14,14 @@ class TinyColorApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.grey,
       ),
-      home: ExamplePage(),
+      home: const ExamplePage(),
     );
   }
 }
 
 class ExamplePage extends StatelessWidget {
+  const ExamplePage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final TinyColor tc = TinyColor(Colors.blue);
@@ -32,8 +34,10 @@ class ExamplePage extends StatelessWidget {
         children: <Widget>[
           _createListItem(
             title: "Original color",
-            subtitle: """TinyColor tc = TinyColor(Colors.blue)
-Color c = Colors.blue""",
+            subtitle: """
+TinyColor tc = TinyColor(Colors.blue)
+Color c = Colors.blue
+            """,
             color: tc.color,
             showOr: false,
           ),
@@ -97,7 +101,7 @@ Color c = Colors.blue""",
     );
   }
 
-  _createListItem({
+  Widget _createListItem({
     required String title,
     required String subtitle,
     required Color color,
