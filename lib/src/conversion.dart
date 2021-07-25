@@ -75,12 +75,12 @@ HSVColor rgbToHsv({
     HSVColor.fromColor(Color.fromARGB(a, r, g, b));
 
 double _hue2rgb(double p, double q, double t) {
-  double tValue = t;
+  double tint = t;
 
-  if (tValue < 0) tValue += 1;
-  if (tValue > 1) tValue -= 1;
-  if (tValue < 1 / 6) return p + (q - p) * 6 * tValue;
-  if (tValue < 1 / 2) return q;
-  if (tValue < 2 / 3) return p + (q - p) * (2 / 3 - tValue) * 6;
+  if (tint < 0) tint += 1;
+  if (tint > 1) tint -= 1;
+  if (tint < 1 / 6) return p + (q - p) * 6 * tint;
+  if (tint < 1 / 2) return q;
+  if (tint < 2 / 3) return p + (q - p) * (2 / 3 - tint) * 6;
   return p;
 }
