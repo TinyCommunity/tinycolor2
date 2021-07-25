@@ -78,10 +78,21 @@ class TinyColor {
   TinyColor brighten([int amount = 10]) {
     final color = Color.fromARGB(
       _color.alpha,
-      math.max(0, math.min(255, _color.red - (255 * -(amount / 100)).round())),
       math.max(
-          0, math.min(255, _color.green - (255 * -(amount / 100)).round())),
-      math.max(0, math.min(255, _color.blue - (255 * -(amount / 100)).round())),
+          0, math.min(
+              255, _color.red - (255 * -(amount / 100)).round(),
+          ),
+      ),
+      math.max(
+          0, math.min(
+              255, _color.green - (255 * -(amount / 100)).round(),
+          ),
+      ),
+      math.max(
+          0, math.min(
+              255, _color.blue - (255 * -(amount / 100)).round(),
+          ),
+      ),
     );
     return TinyColor(color);
   }
