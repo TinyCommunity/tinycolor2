@@ -6,6 +6,9 @@ name: ci
 on:
   # Triggers the workflow on push or pull request events
   push:
+    paths-ignore:
+      - '**/*.md'
+      - '.*/**'
   pull_request:
     types:
       - ready_for_review
