@@ -1,4 +1,4 @@
-import 'dart:math' as Math;
+import 'dart:math' as math;
 import 'dart:ui';
 
 import 'package:flutter/painting.dart';
@@ -15,8 +15,8 @@ HslColor rgbToHsl({
   final double gBound = bound01(g, 255.0);
   final double bBound = bound01(b, 255.0);
 
-  final max = [rBound, gBound, bBound].reduce(Math.max);
-  final min = [rBound, gBound, bBound].reduce(Math.min);
+  final max = [rBound, gBound, bBound].reduce(math.max);
+  final min = [rBound, gBound, bBound].reduce(math.min);
   double h = 0.0;
   double s = 0.0;
   final double l = (max + min) / 2;
