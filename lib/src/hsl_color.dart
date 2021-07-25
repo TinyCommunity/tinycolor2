@@ -11,5 +11,6 @@ class HslColor {
     this.a = 0.0,
   });
 
+  @override
   String toString() => "HSL(h: $h, s: $s, l: $l, a: $a)";
 }
