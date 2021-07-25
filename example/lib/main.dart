@@ -37,7 +37,7 @@ class ExamplePage extends StatelessWidget {
             subtitle: """
 TinyColor tc = TinyColor(Colors.blue)
 Color c = Colors.blue
-            """,
+""",
             color: tc.color,
             showOr: false,
           ),

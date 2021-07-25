@@ -172,6 +172,6 @@ class TinyColor {
   bool equals(Object other) => this == other;
 }
 
-extension ColorExtension on Color {
+extension _ColorExtension on Color {
   Color clone() => Color.fromARGB(alpha, red, green, blue);
 }
