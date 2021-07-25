@@ -1,7 +1,7 @@
-import 'dart:math' as Math;
+import 'dart:math' as math;
 import 'dart:ui' show Color;
 
-import 'package:flutter/painting.dart' show HSLColor, HSVColor;
+import 'package:flutter/painting.dart' show HSVColor;
 import 'package:pigment/pigment.dart';
 
 import 'conversion.dart';
@@ -12,28 +12,29 @@ class TinyColor {
   final Color originalColor;
   Color _color;
 
-  TinyColor(Color color)
-      : originalColor = color,
-        _color = color.clone();
+  TinyColor(this.originalColor) : _color = originalColor.clone();
 
   factory TinyColor.fromRGB({
     required int r,
     required int g,
     required int b,
     int a = 100,
-  }) => TinyColor(Color.fromARGB(a, r, g, b));
+  }) =>
+      TinyColor(Color.fromARGB(a, r, g, b));
 
   factory TinyColor.fromHSL(HslColor hsl) => TinyColor(hslToColor(hsl));
 
   factory TinyColor.fromHSV(HSVColor hsv) => TinyColor(hsv.toColor());
 
-  factory TinyColor.fromString(String string) => TinyColor(Pigment.fromString(string));
+  factory TinyColor.fromString(String string) =>
+      TinyColor(Pigment.fromString(string));
 
   bool isDark() => getBrightness() < 128.0;
 
   bool isLight() => !isDark();
 
-  double getBrightness() => (_color.red * 299 + _color.green * 587 + _color.blue * 114) / 1000;
+  double getBrightness() =>
+      (_color.red * 299 + _color.green * 587 + _color.blue * 114) / 1000;
 
   double getLuminance() => _color.computeLuminance();
 
@@ -77,10 +78,10 @@ class TinyColor {
   TinyColor brighten([int amount = 10]) {
     final color = Color.fromARGB(
       _color.alpha,
-      Math.max(0, Math.min(255, _color.red - (255 * -(amount / 100)).round())),
-      Math.max(
-          0, Math.min(255, _color.green - (255 * -(amount / 100)).round())),
-      Math.max(0, Math.min(255, _color.blue - (255 * -(amount / 100)).round())),
+      math.max(0, math.min(255, _color.red - (255 * -(amount / 100)).round())),
+      math.max(
+          0, math.min(255, _color.green - (255 * -(amount / 100)).round())),
+      math.max(0, math.min(255, _color.blue - (255 * -(amount / 100)).round())),
     );
     return TinyColor(color);
   }
@@ -93,14 +94,14 @@ class TinyColor {
   }
 
   TinyColor tint([int amount = 10]) => mix(
-    input: Color.fromRGBO(255, 255, 255, 1.0),
-    amount: amount,
-  );
+        input: const Color.fromRGBO(255, 255, 255, 1.0),
+        amount: amount,
+      );
 
   TinyColor shade([int amount = 10]) => mix(
-    input: Color.fromRGBO(0, 0, 0, 1.0),
-    amount: amount,
-  );
+        input: const Color.fromRGBO(0, 0, 0, 1.0),
+        amount: amount,
+      );
 
   TinyColor desaturate([int amount = 10]) {
     final hsl = toHsl();
@@ -160,6 +161,6 @@ class TinyColor {
   bool equals(Object other) => this == other;
 }
 
-extension _ on Color {
+extension ColorExtension on Color {
   Color clone() => Color.fromARGB(alpha, red, green, blue);
 }
