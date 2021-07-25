@@ -26,6 +26,11 @@ jobs:
         with:
           java-version: '12.x'
 
+      - uses: actions/cache@v2
+        with:
+          path: /opt/hostedtoolcache/flutter
+          key: ${{ runner.OS }}-ci
+
       - uses: subosito/flutter-action@v1
 
       # Runs a single command using the runners shell
@@ -46,6 +51,11 @@ jobs:
       - uses: actions/setup-java@v1
         with:
           java-version: '12.x'
+
+      - uses: actions/cache@v2
+        with:
+          path: /opt/hostedtoolcache/flutter
+          key: ${{ runner.OS }}-ci
 
       - uses: subosito/flutter-action@v1
 
