@@ -33,21 +33,21 @@ TinyColor.fromRGB(r: 255, g: 255, b:255);
 ### From `HslColor`
 
 ```dart
-HslColor color = HslColor(h: 250, s: 57, l: 30);
+final HslColor color = HslColor(h: 250, s: 57, l: 30);
 TinyColor.fromHSL(color);
 ```
 
 ### From `HSVColor`
 
 ```dart
-HSVColor color = HSVColor(h: 250, s: 57, v: 30);
+final HSVColor color = HSVColor(h: 250, s: 57, v: 30);
 TinyColor.fromHSV(color);
 ```
 
 ### From Flutter's `Color`
 
 ```dart
-TinyColor tinyColor = Colors.blue.toTinyColor();
+final TinyColor tinyColor = Colors.blue.toTinyColor();
 ```
 
 ## Properties
@@ -257,8 +257,8 @@ Colors.red.mix(Colors.yellow, 20);
 `clone: function() -> TinyColor`. Instantiate a new `TinyColor` object with the same color. Any changes to the new one won't affect the old one.
 
 ```dart
-final color1 = new TinyColor(Colors.red);
-final color2 = color1.clone();
+final TinyColor color1 = TinyColor(Colors.red);
+final TinyColor color2 = color1.clone();
 color2.setAlpha(20);
 ```
 
@@ -267,8 +267,8 @@ color2.setAlpha(20);
 `==: function(Object) -> bool`. Compares if `[Object]` is the same `TinyColor` object.
 
 ```dart
-final color1 = TinyColor(Colors.blue);
-final color2 = TinyColor(Colors.yellow);
+final TinyColor color1 = TinyColor(Colors.blue);
+final TinyColor color2 = TinyColor(Colors.yellow);
 if (color1 == color2) return "same";
 else return "different";
 ```
