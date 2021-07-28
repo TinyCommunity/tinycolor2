@@ -1,6 +1,5 @@
 import 'package:flutter/painting.dart';
 
-import 'hsl_color.dart';
 import 'tinycolor.dart';
 
 /// Extends the Color class to allow direct TinyColor manipulation natively
@@ -10,7 +9,7 @@ extension TinyColorExtension on Color {
 
   HSVColor toHsv() => TinyColor(this).toHsv();
 
-  HslColor toHsl() => TinyColor(this).toHsl();
+  HSLColor toHsl() => TinyColor(this).toHsl();
 
   /// Lighten the color a given amount, from 0 to 100. Providing 100 will always return white.
   Color lighten([int amount = 10]) => TinyColor(this).lighten(amount).color;

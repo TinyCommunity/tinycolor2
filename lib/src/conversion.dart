@@ -3,10 +3,9 @@ import 'dart:ui';
 
 import 'package:flutter/painting.dart';
 
-import 'hsl_color.dart';
 import 'util.dart';
 
-HslColor rgbToHsl({
+HSLColor rgbToHsl({
   required double r,
   required double g,
   required double b,
