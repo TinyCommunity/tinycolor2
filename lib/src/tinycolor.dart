@@ -122,7 +122,7 @@ class TinyColor {
   TinyColor spin(double amount) {
     final hsl = toHsl();
     final hue = (hsl.hue + amount) % 360;
-    return TinyColor.fromHSL(hsl.withHue(hue < 0 ? 360 + hue : hue);
+    return TinyColor.fromHSL(hsl.withHue(hue < 0 ? 360 + hue : hue));
   }
 
   TinyColor mix({
