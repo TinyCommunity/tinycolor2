@@ -1,5 +1,10 @@
 # Changelog
 
+## [2.0.1] - TBA
+
+### Changed
+* `HslColor` class is now deprecated in favor of native `HSLColor`
+
 ## [2.0.0] - 2021-07-28
 
 ### Added

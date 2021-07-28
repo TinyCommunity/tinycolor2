@@ -30,17 +30,17 @@ TinyColor.fromString('#FE5567');
 TinyColor.fromRGB(r: 255, g: 255, b:255);
 ```
 
-### From `HslColor`
+### From `HSLColor`
 
 ```dart
-final HslColor color = HslColor(h: 250, s: 57, l: 30);
+final HSLColor color = HSLColor.fromAHSL(1.0, 250, 57, 30);
 TinyColor.fromHSL(color);
 ```
 
 ### From `HSVColor`
 
 ```dart
-final HSVColor color = HSVColor(h: 250, s: 57, v: 30);
+final HSVColor color = HSVColor.fromAHSV(1.0, 250, 57, 30);
 TinyColor.fromHSV(color);
 ```
 
