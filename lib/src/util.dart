@@ -1,21 +1,17 @@
-import 'dart:core';
-import 'dart:math' as Math;
+import 'dart:math' as math;
 
-double bound01(double n, double max) {
-  n = max == 360.0 ? n : Math.min(max, Math.max(0.0, n));
+double bound01(double value, double max) {
+  final double n = max == 360.0 ? value : math.min(max, math.max(0.0, value));
   final double absDifference = n - max;
   if (absDifference.abs() < 0.000001) {
     return 1.0;
   }
 
   if (max == 360) {
-    n = (n < 0 ? n % max + max : n % max) / max;
+    return (n < 0 ? n % max + max : n % max) / max;
   } else {
-    n = (n % max) / max;
+    return (n % max) / max;
   }
-  return n;
 }
 
-double clamp01(double val) {
-  return Math.min(1.0, Math.max(0.0, val));
-}
+double clamp01(double val) => math.min(1.0, math.max(0.0, val));

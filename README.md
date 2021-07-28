@@ -1,51 +1,53 @@
-# tinycolor
+# tinycolor2
 > TinyColor is a small library for Flutter color manipulation and conversion
 
 A port of [tinycolor2](https://github.com/bgrins/TinyColor) by [Brian Grinstead](https://github.com/bgrins)
 
 ## Getting Started
 
-A tinycolor receives a `Color` as parameter.
+A `TinyColor` receives a `Color` as parameter.
 
 ```dart
-import 'package:tinycolor/tinycolor.dart';
+import 'package:tinycolor2/tinycolor2.dart';
 
-final TinyColor = TinyColor(Colors.green);
+final TinyColor tinyColor = TinyColor(Colors.green);
 ```
-Now you can also use the package to extend the native Color class with all the same features, but simpler. To use extension update, make sure to change envieronment sdk version in pubspec like this: ` sdk: ">=2.6.0 <3.0.0"`
+Now you can also use the package to extend the native `Color` class with all the same features, but simpler. To use extension update, make sure to change envieronment sdk version in pubspec like this: ` sdk: ">=2.6.0 <3.0.0"`
+
+## Constructors
 
 ### From a Hex String
 
 The package uses [Pigment](https://pub.dartlang.org/packages/pigment) by [Bregy Malpartida Ramos](https://github.com/bregydoc/) to convert strings to `Color`
 
-````dart
+```dart
 TinyColor.fromString('#FE5567');
-````
+```
 
 ### From RGB int values
 
-````dart
+```dart
 TinyColor.fromRGB(r: 255, g: 255, b:255);
-````
+```
 
-### From HSL color
+### From `HslColor`
 
 ```dart
-HslColor color = HslColor(h: 250, s: 57, l: 30);
+final HslColor color = HslColor(h: 250, s: 57, l: 30);
 TinyColor.fromHSL(color);
 ```
 
-### From HSV color
+### From `HSVColor`
 
 ```dart
-HSVColor color = HSVColor(h: 250, s: 57, v: 30);
+final HSVColor color = HSVColor(h: 250, s: 57, v: 30);
 TinyColor.fromHSV(color);
 ```
 
-### From Flutter's Color
+### From Flutter's `Color`
 
 ```dart
-TinyColor tinyColor = Colors.blue.toTinyColor();
+final TinyColor tinyColor = Colors.blue.toTinyColor();
 ```
 
 ## Properties
@@ -62,7 +64,7 @@ final Color color = TinyColor(Colors.white).color;
 
 ### getBrightness
 
-Returns the perceived brightness of a color, from `0-255`, as defined by [Web Content Accessibility Guidelines (Version 1.0)](http://www.w3.org/TR/AERT#color-contrast).
+Returns the perceived brightness of a color, from `0` to `255`, as defined by [Web Content Accessibility Guidelines (Version 1.0)](http://www.w3.org/TR/AERT#color-contrast).
 
 ```dart
 TinyColor.fromString("#ffffff").getBrightness(); // 255
@@ -103,22 +105,6 @@ TinyColor.fromString("#ffffff").getLuminance();
 Colors.white.luminance;
 ```
 
-### setAlpha
-
-Sets the alpha value on the current color.
-
-```dart
-final color = TinyColor(Colors.red).setAlpha(10);
-```
-
-### setOpacity
-
-Sets the opacity value on the current color.
-
-```dart
-final color = TinyColor(Colors.red).setOpacity(0.5);
-```
-
 ## Color Modification
 
 These methods manipulate the current color, and return it for chaining. For instance:
@@ -129,9 +115,25 @@ TinyColor(Colors.red).lighten().desaturate().color;
 Colors.red.lighten().desaturate();
 ```
 
+### setAlpha
+
+Sets the alpha value on the current color, from `0` to `100`.
+
+```dart
+TinyColor(Colors.red).setAlpha(10);
+```
+
+### setOpacity
+
+Sets the opacity value on the current color, from `0.0` to `1.0`.
+
+```dart
+TinyColor(Colors.red).setOpacity(0.5);
+```
+
 ### lighten
 
-`lighten: function(amount = 10) -> TinyColor`. Lighten the color a given amount, from 0 to 100. Providing 100 will always return white.
+`lighten: function(amount = 10) -> TinyColor`. Lighten the color a given amount, from `0` to `100`. Providing `100` will always return white.
 
 ```dart
 TinyColor(Colors.red).lighten().color;
@@ -142,7 +144,7 @@ Colors.red.lighten(50);
 
 ### brighten
 
-`brighten: function(amount = 10) -> TinyColor`. Brighten the color a given amount, from 0 to 100.
+`brighten: function(amount = 10) -> TinyColor`. Brighten the color a given amount, from `0` to `100`.
 
 ```dart
 TinyColor(Colors.black).brighten().color;
@@ -152,7 +154,7 @@ Colors.black.brighten(50);
 
 ### darken
 
-`darken: function(amount = 10) -> TinyColor`. Darken the color a given amount, from 0 to 100. Providing 100 will always return black.
+`darken: function(amount = 10) -> TinyColor`. Darken the color a given amount, from `0` to `100`. Providing `100` will always return black.
 
 ```dart
 TinyColor(Colors.red).darken().color;
@@ -163,7 +165,7 @@ Colors.red.darken(50);
 
 ### tint
 
-Mix the color with pure white, from 0 to 100. Providing 0 will do nothing, providing 100 will always return white.
+Mix the color with pure white, from `0` to `100`. Providing `0` will do nothing, providing `100` will always return white.
 
 ```dart
 TinyColor(Color.red).tint().color;
@@ -174,7 +176,7 @@ Colors.red.tint(50);
 
 ### shade
 
-Mix the color with pure black, from 0 to 100. Providing 0 will do nothing, providing 100 will always return black.
+Mix the color with pure black, from `0` to `100`. Providing `0` will do nothing, providing `100` will always return black.
 
 ```dart
 TinyColor(Colors.red).shade().color;
@@ -185,7 +187,7 @@ Colors.red.shade(50);
 
 ### desaturate
 
-`desaturate: function(amount = 10) -> TinyColor`. Desaturate the color a given amount, from 0 to 100. Providing 100 will is the same as calling `greyscale`.
+`desaturate: function(amount = 10) -> TinyColor`. Desaturate the color a given amount, from `0` to `100`. Providing `100` will is the same as calling `greyscale`.
 
 ```dart
 TinyColor(Colors.red).desaturate().color;
@@ -196,7 +198,7 @@ Colors.red.desaturate(50);
 
 ### saturate
 
-`saturate: function(amount = 10) -> TinyColor`. Saturate the color a given amount, from 0 to 100.
+`saturate: function(amount = 10) -> TinyColor`. Saturate the color a given amount, from `0` to `100`.
 
 ```dart
 TinyColor(Colors.red).saturate().color;
@@ -216,7 +218,7 @@ Colors.red.greyscale;
 
 ### spin
 
-`spin: function(amount = 0) -> TinyColor`. Spin the hue a given amount, from -360 to 360. Calling with 0, 360, or -360 will do nothing (since it sets the hue back to what it was before).
+`spin: function(amount = 0) -> TinyColor`. Spin the hue a given amount, from `-360` to `360`. Calling with `0`, `360`, or `-360` will do nothing (since it sets the hue back to what it was before).
 
 ```dart
 TinyColor(Colors.red).spin(180).color;
@@ -240,7 +242,7 @@ Colors.red.compliment;
 
 ### mix
 
-`mix: function(toColor, amount = 10) -> TinyColor`. Blends the color with another color a given amount, from 0 - 100, default 50.
+`mix: function(toColor, amount = 10) -> TinyColor`. Blends the color with another color a given amount, from `0` to `100`, default `10`.
 
 ```dart
 TinyColor(Colors.red).mix(TinyColor(Colors.yellow, 20)).color;
@@ -252,11 +254,21 @@ Colors.red.mix(Colors.yellow, 20);
 
 ### clone
 
-`clone: function() -> TinyColor`.
-Instantiate a new TinyColor object with the same color. Any changes to the new one won't affect the old one.
+`clone: function() -> TinyColor`. Instantiate a new `TinyColor` object with the same color. Any changes to the new one won't affect the old one.
 
 ```dart
-final color1 = new TinyColor(Colors.red);
-final color2 = color1.clone();
+final TinyColor color1 = TinyColor(Colors.red);
+final TinyColor color2 = color1.clone();
 color2.setAlpha(20);
+```
+
+### ==
+
+`==: function(Object) -> bool`. Compares if `[Object]` is the same `TinyColor` object.
+
+```dart
+final TinyColor color1 = TinyColor(Colors.blue);
+final TinyColor color2 = TinyColor(Colors.yellow);
+if (color1 == color2) return "same";
+else return "different";
 ```
