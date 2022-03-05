@@ -14,7 +14,7 @@ void main() {
           expect(
             color.color,
             const Color(0xFFFFFFFF),
-          )
+          );
         },
       );
       test(
@@ -62,7 +62,7 @@ void main() {
             0x00,
           );
         },
-      };
+      );
       test(
         ".setOpacity()",
         () {
