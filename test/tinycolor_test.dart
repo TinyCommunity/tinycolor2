@@ -9,6 +9,51 @@ void main() {
     () {
       final TinyColor color = TinyColor(const Color(0xFFFFFFFF));
       test(
+        ".color",
+        () {
+          expect(
+            color.color,
+            const Color(0xFFFFFFFF),
+          )
+        },
+      );
+      test(
+        ".getBrightness()",
+        () {
+          expect(
+            color.getBrightness(),
+            color.color.brightness,
+          );
+        },
+      );
+      test(
+        ".isLight()",
+        () {
+          expect(
+            color.isLight(),
+            color.color.isLight,
+          );
+        },
+      );
+      test(
+        ".isDark()",
+        () {
+          expect(
+            color.isDark(),
+            color.color.isDark,
+          );
+        },
+      );
+      test(
+        ".getLuminance()",
+        () {
+          expect(
+            color.getLuminance(),
+            color.color.luminance,
+          );
+        },
+      );
+      test(
         ".setAlpha()",
         () {
           color.setAlpha(0x00);
