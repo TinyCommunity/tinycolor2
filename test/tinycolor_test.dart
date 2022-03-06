@@ -56,9 +56,8 @@ void main() {
       test(
         ".setAlpha()",
         () {
-          color.setAlpha(0x00);
           expect(
-            color.color.alpha,
+            color.setAlpha(0x00).color.alpha,
             0x00,
           );
         },
@@ -66,11 +65,10 @@ void main() {
       test(
         ".setOpacity()",
         () {
-          color.setOpacity(0.5);
           // underlying dart implementation converts the opacity value to an
           // int, then back into a double. Thus some precision is loss.
           expect(
-            color.color.opacity,
+            color.setOpacity(0.5).color.opacity,
             moreOrLessEquals(0.5, epsilon: 1e-2),
           );
         },
