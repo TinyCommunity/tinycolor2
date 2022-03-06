@@ -75,6 +75,24 @@ void main() {
           );
         },
       );
+      test(
+        ".clone()",
+        () {
+          expect(
+            color.clone(),
+            TinyColor(const Color(0xFFFFFFFF)),
+          );
+        },
+      );
+      test(
+        "==",
+        () {
+          expect(
+            color == TinyColor(const Color(0xFFFFFFFF)),
+            true,
+          );
+        },
+      );
     },
   );
 }
