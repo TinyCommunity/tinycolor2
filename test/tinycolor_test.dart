@@ -22,7 +22,7 @@ void main() {
         () {
           expect(
             color.getBrightness(),
-            const Color(0xFFFFFFFF).brightness,
+            255,
           );
         },
       );
@@ -31,7 +31,7 @@ void main() {
         () {
           expect(
             color.isLight(),
-            const Color(0xFFFFFFFF).isLight,
+            true,
           );
         },
       );
@@ -40,7 +40,7 @@ void main() {
         () {
           expect(
             color.isDark(),
-            const Color(0xFFFFFFFF).isDark,
+            false,
           );
         },
       );
@@ -49,7 +49,7 @@ void main() {
         () {
           expect(
             color.getLuminance(),
-            const Color(0xFFFFFFFF).luminance,
+            const Color(0xFFFFFFFF).computeLuminance(),
           );
         },
       );
