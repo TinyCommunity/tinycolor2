@@ -149,10 +149,11 @@ class TinyColor {
   }) {
     final p = amount / 100.0;
     final color = Color.fromARGB(
-        ((input.alpha - _color.alpha) * p + _color.alpha).round(),
-        ((input.red - _color.red) * p + _color.red).round(),
-        ((input.green - _color.green) * p + _color.green).round(),
-        ((input.blue - _color.blue) * p + _color.blue).round());
+      ((input.alpha - _color.alpha) * p + _color.alpha).round(),
+      ((input.red - _color.red) * p + _color.red).round(),
+      ((input.green - _color.green) * p + _color.green).round(),
+      ((input.blue - _color.blue) * p + _color.blue).round(),
+    );
     return TinyColor(color);
   }
 
