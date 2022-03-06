@@ -9,10 +9,9 @@ import 'hsl_color.dart';
 import 'util.dart';
 
 class TinyColor {
-  final Color originalColor;
   Color _color;
 
-  TinyColor(this.originalColor) : _color = Color(originalColor.value);
+  TinyColor(this._color);
 
   factory TinyColor.fromRGB({
     required int r,
