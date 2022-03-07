@@ -76,7 +76,7 @@ class TinyColor {
   }
 
   TinyColor brighten([int amount = 10]) {
-    final color = Color.fromARGB(
+    _color = Color.fromARGB(
       _color.alpha,
       math.max(
         0,
@@ -100,7 +100,7 @@ class TinyColor {
         ),
       ),
     );
-    return TinyColor(color);
+    return this;
   }
 
   TinyColor darken([int amount = 10]) {
@@ -148,13 +148,13 @@ class TinyColor {
     int amount = 50,
   }) {
     final p = amount / 100.0;
-    final color = Color.fromARGB(
+    _color = Color.fromARGB(
       ((input.alpha - _color.alpha) * p + _color.alpha).round(),
       ((input.red - _color.red) * p + _color.red).round(),
       ((input.green - _color.green) * p + _color.green).round(),
       ((input.blue - _color.blue) * p + _color.blue).round(),
     );
-    return TinyColor(color);
+    return this;
   }
 
   TinyColor complement() {
