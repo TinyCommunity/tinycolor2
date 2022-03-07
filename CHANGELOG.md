@@ -1,5 +1,10 @@
 # Changelog
 
+## [2.0.1] - TBD
+
+### Fixed
+* `alpha` range should be `0`-`255` at [PR #39](https://github.com/TinyCommunity/tinycolor2/pull/39)
+
 ## [2.0.0] - 2021-07-28
 
 ### Added
