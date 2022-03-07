@@ -16,18 +16,20 @@ Now you can also use the package to extend the native `Color` class with all the
 
 ## Constructors
 
+### From Flutter's `Color`
+
+```dart
+TinyColor(Colors.blue);
+// or with Color extension
+Colors.blue.toTinyColor();
+```
+
 ### From a Hex String
 
 The package uses [Pigment](https://pub.dartlang.org/packages/pigment) by [Bregy Malpartida Ramos](https://github.com/bregydoc/) to convert strings to `Color`
 
 ```dart
 TinyColor.fromString('#FE5567');
-```
-
-### From RGB int values
-
-```dart
-TinyColor.fromRGB(r: 255, g: 255, b:255);
 ```
 
 ### From `HslColor`
@@ -42,12 +44,6 @@ TinyColor.fromHSL(color);
 ```dart
 final HSVColor color = HSVColor.fromAHSV(1.0, 250, 57, 30);
 TinyColor.fromHSV(color);
-```
-
-### From Flutter's `Color`
-
-```dart
-final TinyColor tinyColor = Colors.blue.toTinyColor();
 ```
 
 ## Properties
