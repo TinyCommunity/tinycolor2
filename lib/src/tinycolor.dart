@@ -12,7 +12,10 @@ class TinyColor {
   final Color originalColor;
   Color _color;
 
+  @Deprecated('Use TinyColor.fromColor() instead.')
   TinyColor(this.originalColor) : _color = Color(originalColor.value);
+
+  TinyColor.fromColor(this.originalColor) : _color = Color(originalColor.value);
 
   factory TinyColor.fromRGB({
     required int r,
@@ -20,14 +23,14 @@ class TinyColor {
     required int b,
     int a = 100,
   }) =>
-      TinyColor(Color.fromARGB(a, r, g, b));
+      TinyColor.fromColor(Color.fromARGB(a, r, g, b));
 
-  factory TinyColor.fromHSL(HslColor hsl) => TinyColor(hslToColor(hsl));
+  factory TinyColor.fromHSL(HslColor hsl) => TinyColor.fromColor(hslToColor(hsl));
 
-  factory TinyColor.fromHSV(HSVColor hsv) => TinyColor(hsv.toColor());
+  factory TinyColor.fromHSV(HSVColor hsv) => TinyColor.fromColor(hsv.toColor());
 
   factory TinyColor.fromString(String string) =>
-      TinyColor(Pigment.fromString(string));
+      TinyColor.fromColor(Pigment.fromString(string));
 
   bool isDark() => getBrightness() < 128.0;
 
@@ -66,7 +69,7 @@ class TinyColor {
 
   String toHex8() => _color.value.toRadixString(16).padLeft(8, '0');
 
-  TinyColor clone() => TinyColor(_color);
+  TinyColor clone() => TinyColor.fromColor(_color);
 
   TinyColor lighten([int amount = 10]) {
     final hsl = toHsl();
@@ -100,7 +103,7 @@ class TinyColor {
         ),
       ),
     );
-    return TinyColor(color);
+    return TinyColor.fromColor(color);
   }
 
   TinyColor darken([int amount = 10]) {
@@ -154,7 +157,7 @@ class TinyColor {
       ((input.green - _color.green) * p + _color.green).round(),
       ((input.blue - _color.blue) * p + _color.blue).round(),
     );
-    return TinyColor(color);
+    return TinyColor.fromColor(color);
   }
 
   TinyColor complement() {
