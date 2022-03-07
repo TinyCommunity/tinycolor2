@@ -27,6 +27,9 @@ class TinyColor {
 
   factory TinyColor.fromHSL(HslColor hsl) => TinyColor.fromColor(hslToColor(hsl));
 
+  @Deprecated('Use TinyColor.fromHSVColor() instead.')
+  factory TinyColor.fromHSV(HSVColor hsl) => TinyColor.fromHSVColor(hsl);
+
   factory TinyColor.fromHSVColor(HSVColor hsv) => TinyColor.fromColor(hsv.toColor());
 
   factory TinyColor.fromString(String string) =>
@@ -50,6 +53,9 @@ class TinyColor {
     _color = _color.withOpacity(opacity);
     return this;
   }
+
+  @Deprecated('Use TinyColor.toHSVColor() instead.')
+  HSVColor toHsv() => toHSVColor();
 
   HSVColor toHSVColor() => HSVColor.fromColor(_color);
 
