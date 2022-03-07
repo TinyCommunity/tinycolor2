@@ -27,7 +27,7 @@ class TinyColor {
 
   factory TinyColor.fromHSL(HslColor hsl) => TinyColor.fromColor(hslToColor(hsl));
 
-  factory TinyColor.fromHSV(HSVColor hsv) => TinyColor.fromColor(hsv.toColor());
+  factory TinyColor.fromHSVColor(HSVColor hsv) => TinyColor.fromColor(hsv.toColor());
 
   factory TinyColor.fromString(String string) =>
       TinyColor.fromColor(Pigment.fromString(string));
@@ -51,7 +51,7 @@ class TinyColor {
     return this;
   }
 
-  HSVColor toHsv() => HSVColor.fromColor(_color);
+  HSVColor toHSVColor() => HSVColor.fromColor(_color);
 
   HslColor toHsl() {
     final hsl = rgbToHsl(
