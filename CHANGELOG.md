@@ -1,5 +1,10 @@
 # Changelog
 
+## [2.0.1] - TBD
+
+### Fixed
+* `.greyscale()` should be a method, not a property in `Color` extension at [PR #45](https://github.com/TinyCommunity/tinycolor2/pull/45)
+
 ## [2.0.0] - 2021-07-28
 
 ### Added
