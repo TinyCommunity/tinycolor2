@@ -1,5 +1,10 @@
 # Changelog
 
+## [2.0.1] - TBD
+
+### Fixed
+* Typo in `.complement()` naming at [PR #43](https://github.com/TinyCommunity/tinycolor2/pull/43)
+
 ## [2.0.0] - 2021-07-28
 
 ### Added
