@@ -57,9 +57,5 @@ extension TinyColorExtension on Color {
 
   /// Blends the color with another color a given amount, from 0 - 100, default 50.
   Color mix(Color toColor, [int amount = 50]) => TinyColor(this)
-      .mix(
-        input: toColor,
-        amount: amount,
-      )
-      .color;
+      .mix(toColor, amount).color;
 }
