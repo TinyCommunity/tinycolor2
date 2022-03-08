@@ -230,14 +230,14 @@ TinyColor(Colors.red).spin(0).color;
 TinyColor(Colors.red).spin(360).color;
 ```
 
-### compliment
+### complement
 
-`compliment: function() -> TinyColor`. Returns the Complimentary Color for dynamic matching.
+`complement: function() -> TinyColor`. Returns the complementary color for dynamic matching.
 
 ```dart
-TinyColor(Colors.red).compliment().color;
+TinyColor(Colors.red).complement().color;
 // or with Color extension
-Colors.red.compliment;
+Colors.red.complement();
 ```
 
 ### mix
