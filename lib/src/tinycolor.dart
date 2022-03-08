@@ -143,16 +143,13 @@ class TinyColor {
     return TinyColor.fromHSL(hsl);
   }
 
-  TinyColor mix({
-    required Color input,
-    int amount = 50,
-  }) {
+  TinyColor mix(Color toColor, [int amount = 50]) {
     final p = amount / 100.0;
     final color = Color.fromARGB(
-      ((input.alpha - _color.alpha) * p + _color.alpha).round(),
-      ((input.red - _color.red) * p + _color.red).round(),
-      ((input.green - _color.green) * p + _color.green).round(),
-      ((input.blue - _color.blue) * p + _color.blue).round(),
+      ((toColor.alpha - _color.alpha) * p + _color.alpha).round(),
+      ((toColor.red - _color.red) * p + _color.red).round(),
+      ((toColor.green - _color.green) * p + _color.green).round(),
+      ((toColor.blue - _color.blue) * p + _color.blue).round(),
     );
     return TinyColor(color);
   }
