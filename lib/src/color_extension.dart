@@ -53,7 +53,7 @@ extension TinyColorExtension on Color {
   bool get isDark => TinyColor(this).isDark();
 
   /// Returns the complementary color for dynamic matching
-  Color get complement => TinyColor(this).complement().color;
+  Color complement() => TinyColor(this).complement().color;
 
   /// Blends the color with another color a given amount, from 0 - 100, default 50.
   Color mix(Color toColor, [int amount = 50]) => TinyColor(this)
