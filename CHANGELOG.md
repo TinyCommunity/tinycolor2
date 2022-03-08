@@ -1,5 +1,10 @@
 # Changelog
 
+## [2.0.1] - TBD
+
+### Fixed
+* `.mix()` not matching readme usage at [PR #44](https://github.com/TinyCommunity/tinycolor2/pull/44)
+
 ## [2.0.0] - 2021-07-28
 
 ### Added
