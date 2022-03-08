@@ -111,13 +111,13 @@ class TinyColor {
   }
 
   TinyColor tint([int amount = 10]) => mix(
-        input: const Color.fromRGBO(255, 255, 255, 1.0),
-        amount: amount,
+        const Color.fromRGBO(255, 255, 255, 1.0),
+        amount,
       );
 
   TinyColor shade([int amount = 10]) => mix(
-        input: const Color.fromRGBO(0, 0, 0, 1.0),
-        amount: amount,
+        const Color.fromRGBO(0, 0, 0, 1.0),
+        amount,
       );
 
   TinyColor desaturate([int amount = 10]) {
