@@ -35,7 +35,7 @@ extension TinyColorExtension on Color {
   Color saturate([int amount = 10]) => TinyColor(this).saturate(amount).color;
 
   /// Completely desaturates a color into greyscale. Same as calling desaturate(100).
-  Color get greyscale => TinyColor(this).greyscale().color;
+  Color greyscale() => TinyColor(this).greyscale().color;
 
   /// Spin the hue a given amount, from -360 to 360. Calling with 0, 360, or -360 will do nothing (since it sets the hue back to what it was before).
   Color spin([double amount = 0]) => TinyColor(this).spin(amount).color;
