@@ -92,9 +92,9 @@ Color c = Colors.blue
             color: tc.complement().color,
           ),
           _createListItem(
-            title: "tc.mix(input: Colors.yellow, amount: 20)",
+            title: "tc.mix(Colors.yellow, 20)",
             subtitle: "c.mix(Colors.yellow, 20)",
-            color: tc.mix(input: Colors.yellow, amount: 20).color,
+            color: tc.mix(Colors.yellow, 20).color,
           ),
         ],
       ),
