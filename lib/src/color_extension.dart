@@ -52,8 +52,8 @@ extension TinyColorExtension on Color {
   /// Return a boolean indicating whether the color's perceived brightness is dark.
   bool get isDark => TinyColor(this).isDark();
 
-  /// Returns the Complimentary Color for dynamic matching
-  Color get compliment => TinyColor(this).complement().color;
+  /// Returns the complementary color for dynamic matching
+  Color get complement => TinyColor(this).complement().color;
 
   /// Blends the color with another color a given amount, from 0 - 100, default 50.
   Color mix(Color toColor, [int amount = 50]) => TinyColor(this)
