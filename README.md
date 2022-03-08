@@ -213,7 +213,7 @@ Colors.red.saturate(50);
 ```dart
 TinyColor(Colors.red).greyscale().color;
 // or with Color extension
-Colors.red.greyscale;
+Colors.red.greyscale();
 ```
 
 ### spin
