@@ -35,7 +35,7 @@ extension TinyColorExtension on Color {
   Color saturate([int amount = 10]) => TinyColor(this).saturate(amount).color;
 
   /// Completely desaturates a color into greyscale. Same as calling desaturate(100).
-  Color get greyscale => TinyColor(this).greyscale().color;
+  Color greyscale() => TinyColor(this).greyscale().color;
 
   /// Spin the hue a given amount, from -360 to 360. Calling with 0, 360, or -360 will do nothing (since it sets the hue back to what it was before).
   Color spin([double amount = 0]) => TinyColor(this).spin(amount).color;
@@ -52,14 +52,10 @@ extension TinyColorExtension on Color {
   /// Return a boolean indicating whether the color's perceived brightness is dark.
   bool get isDark => TinyColor(this).isDark();
 
-  /// Returns the Complimentary Color for dynamic matching
-  Color get compliment => TinyColor(this).complement().color;
+  /// Returns the complementary color for dynamic matching
+  Color complement() => TinyColor(this).complement().color;
 
   /// Blends the color with another color a given amount, from 0 - 100, default 50.
-  Color mix(Color toColor, [int amount = 50]) => TinyColor(this)
-      .mix(
-        input: toColor,
-        amount: amount,
-      )
-      .color;
+  Color mix(Color toColor, [int amount = 50]) =>
+      TinyColor(this).mix(toColor, amount).color;
 }
