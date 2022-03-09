@@ -18,7 +18,7 @@ class TinyColor {
     required int r,
     required int g,
     required int b,
-    int a = 100,
+    int a = 255,
   }) =>
       TinyColor(Color.fromARGB(a, r, g, b));
 
