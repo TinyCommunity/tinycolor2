@@ -117,7 +117,7 @@ Colors.red.lighten().desaturate();
 
 ### setAlpha
 
-Sets the alpha value on the current color, from `0` to `100`.
+Sets the alpha value on the current color, from `0` to `255`.
 
 ```dart
 TinyColor(Colors.red).setAlpha(10);
@@ -213,7 +213,7 @@ Colors.red.saturate(50);
 ```dart
 TinyColor(Colors.red).greyscale().color;
 // or with Color extension
-Colors.red.greyscale;
+Colors.red.greyscale();
 ```
 
 ### spin
@@ -230,14 +230,14 @@ TinyColor(Colors.red).spin(0).color;
 TinyColor(Colors.red).spin(360).color;
 ```
 
-### compliment
+### complement
 
-`compliment: function() -> TinyColor`. Returns the Complimentary Color for dynamic matching.
+`complement: function() -> TinyColor`. Returns the complementary color for dynamic matching.
 
 ```dart
-TinyColor(Colors.red).compliment().color;
+TinyColor(Colors.red).complement().color;
 // or with Color extension
-Colors.red.compliment;
+Colors.red.complement();
 ```
 
 ### mix

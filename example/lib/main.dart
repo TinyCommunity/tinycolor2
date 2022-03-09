@@ -87,7 +87,7 @@ Color c = Colors.blue
             color: tc.spin(90).color,
           ),
           _createListItem(
-            title: "tc.compliment()",
+            title: "tc.complement()",
             subtitle: "c.complement()",
             color: tc.complement().color,
           ),
