@@ -2,6 +2,9 @@
 
 ## [2.0.1] - TBD
 
+### Changed
+* Rewrite tests at [PR #35](https://github.com/TinyCommunity/tinycolor2/pull/35)
+
 ### Fixed
 * `.mix()` not matching readme usage at [PR #44](https://github.com/TinyCommunity/tinycolor2/pull/44)
 * `.greyscale()` should be a method, not a property in `Color` extension at [PR #45](https://github.com/TinyCommunity/tinycolor2/pull/45)
