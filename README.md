@@ -218,7 +218,7 @@ Colors.red.greyscale();
 
 ### spin
 
-`spin: function(amount = 0) -> TinyColor`. Spin the hue a given amount, from `-360` to `360`. Calling with `0`, `360`, or `-360` will do nothing (since it sets the hue back to what it was before).
+`spin: function(amount) -> TinyColor`. Spin the hue a given amount, from `-360` to `360`. Calling with `0`, `360`, or `-360` will do nothing (since it sets the hue back to what it was before).
 
 ```dart
 TinyColor(Colors.red).spin(180).color;
