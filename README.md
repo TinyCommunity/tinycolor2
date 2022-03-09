@@ -242,7 +242,7 @@ Colors.red.complement();
 
 ### mix
 
-`mix: function(toColor, amount = 10) -> TinyColor`. Blends the color with another color a given amount, from `0` to `100`, default `10`.
+`mix: function(toColor, amount = 50) -> TinyColor`. Blends the color with another color a given amount, from `0` to `100`.
 
 ```dart
 TinyColor(Colors.red).mix(TinyColor(Colors.yellow, 20)).color;
