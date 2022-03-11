@@ -1,6 +1,6 @@
 # Changelog
 
-## [2.0.1] - TBD
+## [2.0.1] - 2022-03-11
 
 ### Changed
 * Rewrite tests at [PR #35](https://github.com/TinyCommunity/tinycolor2/pull/35)
