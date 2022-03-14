@@ -11,13 +11,13 @@ class TinyColor {
   final Color originalColor;
   Color _color;
 
-  TinyColor(this.originalColor) : _color = originalColor.clone();
+  TinyColor(this.originalColor) : _color = Color(originalColor.value);
 
   factory TinyColor.fromRGB({
     required int r,
     required int g,
     required int b,
-    int a = 100,
+    int a = 255,
   }) =>
       TinyColor(Color.fromARGB(a, r, g, b));
 
@@ -96,13 +96,13 @@ class TinyColor {
   }
 
   TinyColor tint([int amount = 10]) => mix(
-        input: const Color.fromRGBO(255, 255, 255, 1.0),
-        amount: amount,
+        const Color.fromRGBO(255, 255, 255, 1.0),
+        amount,
       );
 
   TinyColor shade([int amount = 10]) => mix(
-        input: const Color.fromRGBO(0, 0, 0, 1.0),
-        amount: amount,
+        const Color.fromRGBO(0, 0, 0, 1.0),
+        amount,
       );
 
   TinyColor desaturate([int amount = 10]) {
@@ -125,16 +125,14 @@ class TinyColor {
     return TinyColor.fromHSL(hsl.withHue(hue < 0 ? 360 + hue : hue));
   }
 
-  TinyColor mix({
-    required Color input,
-    int amount = 50,
-  }) {
+  TinyColor mix(Color toColor, [int amount = 50]) {
     final p = amount / 100.0;
     final color = Color.fromARGB(
-        ((input.alpha - _color.alpha) * p + _color.alpha).round(),
-        ((input.red - _color.red) * p + _color.red).round(),
-        ((input.green - _color.green) * p + _color.green).round(),
-        ((input.blue - _color.blue) * p + _color.blue).round());
+      ((toColor.alpha - _color.alpha) * p + _color.alpha).round(),
+      ((toColor.red - _color.red) * p + _color.red).round(),
+      ((toColor.green - _color.green) * p + _color.green).round(),
+      ((toColor.blue - _color.blue) * p + _color.blue).round(),
+    );
     return TinyColor(color);
   }
 
@@ -158,8 +156,4 @@ class TinyColor {
 
   @Deprecated('Use == instead.')
   bool equals(Object other) => this == other;
-}
-
-extension _ColorExtension on Color {
-  Color clone() => Color.fromARGB(alpha, red, green, blue);
 }

@@ -64,7 +64,7 @@ final Color color = TinyColor(Colors.white).color;
 
 ### getBrightness
 
-Returns the perceived brightness of a color, from `0` to `255`, as defined by [Web Content Accessibility Guidelines (Version 1.0)](http://www.w3.org/TR/AERT#color-contrast).
+Returns the perceived brightness of a color, from `0` to `255`, as defined by [Web Content Accessibility Guidelines (Version 1.0)](https://www.w3.org/TR/AERT#color-contrast).
 
 ```dart
 TinyColor.fromString("#ffffff").getBrightness(); // 255
@@ -117,7 +117,7 @@ Colors.red.lighten().desaturate();
 
 ### setAlpha
 
-Sets the alpha value on the current color, from `0` to `100`.
+Sets the alpha value on the current color, from `0` to `255`.
 
 ```dart
 TinyColor(Colors.red).setAlpha(10);
@@ -213,12 +213,12 @@ Colors.red.saturate(50);
 ```dart
 TinyColor(Colors.red).greyscale().color;
 // or with Color extension
-Colors.red.greyscale;
+Colors.red.greyscale();
 ```
 
 ### spin
 
-`spin: function(amount = 0) -> TinyColor`. Spin the hue a given amount, from `-360` to `360`. Calling with `0`, `360`, or `-360` will do nothing (since it sets the hue back to what it was before).
+`spin: function(amount) -> TinyColor`. Spin the hue a given amount, from `-360` to `360`. Calling with `0`, `360`, or `-360` will do nothing (since it sets the hue back to what it was before).
 
 ```dart
 TinyColor(Colors.red).spin(180).color;
@@ -230,19 +230,19 @@ TinyColor(Colors.red).spin(0).color;
 TinyColor(Colors.red).spin(360).color;
 ```
 
-### compliment
+### complement
 
-`compliment: function() -> TinyColor`. Returns the Complimentary Color for dynamic matching.
+`complement: function() -> TinyColor`. Returns the complementary color for dynamic matching.
 
 ```dart
-TinyColor(Colors.red).compliment().color;
+TinyColor(Colors.red).complement().color;
 // or with Color extension
-Colors.red.compliment;
+Colors.red.complement();
 ```
 
 ### mix
 
-`mix: function(toColor, amount = 10) -> TinyColor`. Blends the color with another color a given amount, from `0` to `100`, default `10`.
+`mix: function(toColor, amount = 50) -> TinyColor`. Blends the color with another color a given amount, from `0` to `100`.
 
 ```dart
 TinyColor(Colors.red).mix(TinyColor(Colors.yellow, 20)).color;
