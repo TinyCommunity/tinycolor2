@@ -27,12 +27,14 @@ class TinyColor {
   @Deprecated('Use TinyColor.fromHSLColor() instead.')
   factory TinyColor.fromHSL(HSLColor hsl) => TinyColor(hsl.toColor());
 
-  factory TinyColor.fromHSLColor(HSLColor hsl) => TinyColor.fromColor(hsl.toColor());
+  factory TinyColor.fromHSLColor(HSLColor hsl) =>
+      TinyColor.fromColor(hsl.toColor());
 
   @Deprecated('Use TinyColor.fromHSVColor() instead.')
   factory TinyColor.fromHSV(HSVColor hsl) => TinyColor.fromHSVColor(hsl);
 
-  factory TinyColor.fromHSVColor(HSVColor hsv) => TinyColor.fromColor(hsv.toColor());
+  factory TinyColor.fromHSVColor(HSVColor hsv) =>
+      TinyColor.fromColor(hsv.toColor());
 
   factory TinyColor.fromString(String string) =>
       TinyColor.fromColor(Pigment.fromString(string));
