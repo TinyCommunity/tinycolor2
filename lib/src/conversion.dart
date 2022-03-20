@@ -1,6 +1,6 @@
 import 'dart:math' as math;
 
-import 'package:flutter/painting.dart';
+import 'package:flutter/painting.dart' show Color, HSLColor, HSVColor;
 
 import 'util.dart';
 
