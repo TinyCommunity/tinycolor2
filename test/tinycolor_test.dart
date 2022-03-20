@@ -1,4 +1,4 @@
-import 'dart:ui' show Color;
+import 'package:flutter/painting.dart' show Color, HSLColor, HSVColor;
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:tinycolor2/tinycolor2.dart';
@@ -280,6 +280,31 @@ void main() {
           expect(
             color == TinyColor(const Color(0xFFFFFFFF)),
             true,
+          );
+        },
+      );
+    },
+  );
+
+  group(
+    "TinyColor HSL",
+    () {
+      final TinyColor color = TinyColor.fromHSL(HSLColor.fromColor(const Color(0xFFFFFFFF)));
+      test(
+        ".color",
+        () {
+          expect(
+            color.color,
+            const Color(0xFFFFFFFF),
+          );
+        },
+      );
+      test(
+        ".toHsl()",
+        () {
+          expect(
+            color.toHsl(),
+            HSLColor.fromColor(const Color(0xFFFFFFFF)),
           );
         },
       );
