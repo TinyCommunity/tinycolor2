@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.1] - 2022-03-11
+
+### Changed
+* Rewrite tests at [PR #35](https://github.com/TinyCommunity/tinycolor2/pull/35)
+
+### Fixed
+* `.mix()` not matching readme usage at [PR #44](https://github.com/TinyCommunity/tinycolor2/pull/44)
+* `.greyscale()` should be a method, not a property in `Color` extension at [PR #45](https://github.com/TinyCommunity/tinycolor2/pull/45)
+* Typo in `.complement()` naming at [PR #43](https://github.com/TinyCommunity/tinycolor2/pull/43)
+* `alpha` range should be `0`-`255` at [PR #39](https://github.com/TinyCommunity/tinycolor2/pull/39)
+
 ## [2.0.0] - 2021-07-28
 
 ### Added
