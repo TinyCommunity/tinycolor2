@@ -72,7 +72,7 @@ class TinyColor {
   TinyColor clone() => TinyColor.fromColor(_color);
 
   TinyColor lighten([int amount = 10]) {
-    final hsl = toHsl();
+    final hsl = toHSLColor();
     final lightness = clamp01(hsl.lightness + amount / 100);
     return TinyColor.fromHSL(hsl.withLightness(lightness));
   }
@@ -106,7 +106,7 @@ class TinyColor {
   }
 
   TinyColor darken([int amount = 10]) {
-    final hsl = toHsl();
+    final hsl = toHSLColor();
     final lightness = clamp01(hsl.lightness - amount / 100);
     return TinyColor.fromHSL(hsl.withLightness(lightness));
   }
@@ -122,13 +122,13 @@ class TinyColor {
       );
 
   TinyColor desaturate([int amount = 10]) {
-    final hsl = toHsl();
+    final hsl = toHSLColor();
     final saturation = clamp01(hsl.saturation - amount / 100);
     return TinyColor.fromHSL(hsl.withSaturation(saturation));
   }
 
   TinyColor saturate([int amount = 10]) {
-    final hsl = toHsl();
+    final hsl = toHSLColor();
     final saturation = clamp01(hsl.saturation + amount / 100);
     return TinyColor.fromHSL(hsl.withSaturation(saturation));
   }
@@ -136,7 +136,7 @@ class TinyColor {
   TinyColor greyscale() => desaturate(100);
 
   TinyColor spin(double amount) {
-    final hsl = toHsl();
+    final hsl = toHSLColor();
     final hue = (hsl.hue + amount) % 360;
     return TinyColor.fromHSL(hsl.withHue(hue < 0 ? 360 + hue : hue));
   }
@@ -153,7 +153,7 @@ class TinyColor {
   }
 
   TinyColor complement() {
-    final hsl = toHsl();
+    final hsl = toHSLColor();
     final hue = (hsl.hue + 180) % 360;
     return TinyColor.fromHSL(hsl.withHue(hue));
   }
