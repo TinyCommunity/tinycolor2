@@ -13,6 +13,7 @@ class TinyColor {
 
   TinyColor(this.originalColor) : _color = Color(originalColor.value);
 
+  @Deprecated('Use TinyColor(Color.fromARGB(a, r, g, b)) instead.')
   factory TinyColor.fromRGB({
     required int r,
     required int g,

@@ -4,6 +4,7 @@
 
 ### Changed
 * `HslColor` class is now deprecated in favor of native `HSLColor` at [PR #18](https://github.com/TinyCommunity/tinycolor2/pull/35)
+* Deprecated TinyColor.fromRGB() at [PR #40](https://github.com/TinyCommunity/tinycolor2/pull/40)
 
 ## [2.0.1] - 2022-03-11
 
