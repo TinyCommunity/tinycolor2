@@ -25,7 +25,10 @@ class TinyColor {
   }) =>
       TinyColor.fromColor(Color.fromARGB(a, r, g, b));
 
+  @Deprecated('Use TinyColor.fromHSLColor() instead.')
   factory TinyColor.fromHSL(HSLColor hsl) => TinyColor(hsl.toColor());
+
+  factory TinyColor.fromHSLColor(HSLColor hsl) => TinyColor.fromColor(hsl.toColor());
 
   @Deprecated('Use TinyColor.fromHSVColor() instead.')
   factory TinyColor.fromHSV(HSVColor hsl) => TinyColor.fromHSVColor(hsl);
@@ -59,7 +62,10 @@ class TinyColor {
 
   HSVColor toHSVColor() => HSVColor.fromColor(_color);
 
+  @Deprecated('Use TinyColor.toHSLColor() instead.')
   HSLColor toHsl() => HSLColor.fromColor(_color);
+
+  HSLColor toHSLColor() => HSLColor.fromColor(_color);
 
   String toHex8() => _color.value.toRadixString(16).padLeft(8, '0');
 
