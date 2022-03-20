@@ -16,6 +16,14 @@ Now you can also use the package to extend the native `Color` class with all the
 
 ## Constructors
 
+### From Flutter's `Color`
+
+```dart
+TinyColor(Colors.blue);
+// or with Color extension
+Colors.blue.toTinyColor();
+```
+
 ### From a Hex String
 
 The package uses [Pigment](https://pub.dartlang.org/packages/pigment) by [Bregy Malpartida Ramos](https://github.com/bregydoc/) to convert strings to `Color`
@@ -24,16 +32,10 @@ The package uses [Pigment](https://pub.dartlang.org/packages/pigment) by [Bregy 
 TinyColor.fromString('#FE5567');
 ```
 
-### From RGB int values
+### From `HSLColor`
 
 ```dart
-TinyColor.fromRGB(r: 255, g: 255, b:255);
-```
-
-### From `HslColor`
-
-```dart
-final HslColor color = HslColor(h: 250, s: 57, l: 30);
+final HSLColor color = HSLColor.fromAHSL(1.0, 250, 57, 30);
 TinyColor.fromHSL(color);
 ```
 
@@ -42,12 +44,6 @@ TinyColor.fromHSL(color);
 ```dart
 final HSVColor color = HSVColor.fromAHSV(1.0, 250, 57, 30);
 TinyColor.fromHSVColor(color);
-```
-
-### From Flutter's `Color`
-
-```dart
-final TinyColor tinyColor = Colors.blue.toTinyColor();
 ```
 
 ## Properties
@@ -117,7 +113,7 @@ Colors.red.lighten().desaturate();
 
 ### setAlpha
 
-Sets the alpha value on the current color, from `0` to `100`.
+Sets the alpha value on the current color, from `0` to `255`.
 
 ```dart
 TinyColor.fromColor(Colors.red).setAlpha(10);
@@ -213,12 +209,12 @@ Colors.red.saturate(50);
 ```dart
 TinyColor.fromColor(Colors.red).greyscale().color;
 // or with Color extension
-Colors.red.greyscale;
+Colors.red.greyscale();
 ```
 
 ### spin
 
-`spin: function(amount = 0) -> TinyColor`. Spin the hue a given amount, from `-360` to `360`. Calling with `0`, `360`, or `-360` will do nothing (since it sets the hue back to what it was before).
+`spin: function(amount) -> TinyColor`. Spin the hue a given amount, from `-360` to `360`. Calling with `0`, `360`, or `-360` will do nothing (since it sets the hue back to what it was before).
 
 ```dart
 TinyColor.fromColor(Colors.red).spin(180).color;
@@ -230,19 +226,19 @@ TinyColor.fromColor(Colors.red).spin(0).color;
 TinyColor.fromColor(Colors.red).spin(360).color;
 ```
 
-### compliment
+### complement
 
-`compliment: function() -> TinyColor`. Returns the Complimentary Color for dynamic matching.
+`complement: function() -> TinyColor`. Returns the complementary color for dynamic matching.
 
 ```dart
-TinyColor.fromColor(Colors.red).compliment().color;
+TinyColor.fromColor(Colors.red).complement().color;
 // or with Color extension
-Colors.red.compliment;
+Colors.red.complement();
 ```
 
 ### mix
 
-`mix: function(toColor, amount = 10) -> TinyColor`. Blends the color with another color a given amount, from `0` to `100`, default `10`.
+`mix: function(toColor, amount = 50) -> TinyColor`. Blends the color with another color a given amount, from `0` to `100`.
 
 ```dart
 TinyColor.fromColor(Colors.red).mix(TinyColor.fromColor(Colors.yellow, 20)).color;

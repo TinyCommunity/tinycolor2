@@ -1,6 +1,5 @@
 import 'package:flutter/painting.dart';
 
-import 'hsl_color.dart';
 import 'tinycolor.dart';
 
 /// Extends the Color class to allow direct TinyColor manipulation natively
@@ -10,7 +9,7 @@ extension TinyColorExtension on Color {
 
   HSVColor toHSVColor() => TinyColor.fromColor(this).toHSVColor();
 
-  HslColor toHsl() => TinyColor.fromColor(this).toHsl();
+  HSLColor toHsl() => TinyColor.fromColor(this).toHsl();
 
   /// Lighten the color a given amount, from 0 to 100. Providing 100 will always return white.
   Color lighten([int amount = 10]) => TinyColor.fromColor(this).lighten(amount).color;
@@ -35,7 +34,7 @@ extension TinyColorExtension on Color {
   Color saturate([int amount = 10]) => TinyColor.fromColor(this).saturate(amount).color;
 
   /// Completely desaturates a color into greyscale. Same as calling desaturate(100).
-  Color get greyscale => TinyColor.fromColor(this).greyscale().color;
+  Color greyscale() => TinyColor.fromColor(this).greyscale().color;
 
   /// Spin the hue a given amount, from -360 to 360. Calling with 0, 360, or -360 will do nothing (since it sets the hue back to what it was before).
   Color spin([double amount = 0]) => TinyColor.fromColor(this).spin(amount).color;
@@ -52,14 +51,10 @@ extension TinyColorExtension on Color {
   /// Return a boolean indicating whether the color's perceived brightness is dark.
   bool get isDark => TinyColor.fromColor(this).isDark();
 
-  /// Returns the Complimentary Color for dynamic matching
-  Color get compliment => TinyColor.fromColor(this).complement().color;
+  /// Returns the complementary color for dynamic matching
+  Color complement() => TinyColor.fromColor(this).complement().color;
 
   /// Blends the color with another color a given amount, from 0 - 100, default 50.
-  Color mix(Color toColor, [int amount = 50]) => TinyColor.fromColor(this)
-      .mix(
-        input: toColor,
-        amount: amount,
-      )
-      .color;
+  Color mix(Color toColor, [int amount = 50]) =>
+      TinyColor.fromColor(this).mix(toColor, amount).color;
 }
