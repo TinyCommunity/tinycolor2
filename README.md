@@ -19,7 +19,7 @@ Now you can also use the package to extend the native `Color` class with all the
 ### From Flutter's `Color`
 
 ```dart
-TinyColor(Colors.blue);
+TinyColor.fromColor(Colors.blue);
 // or with Color extension
 Colors.blue.toTinyColor();
 ```
@@ -36,7 +36,7 @@ TinyColor.fromString('#FE5567');
 
 ```dart
 final HSLColor color = HSLColor.fromAHSL(1.0, 250, 57, 30);
-TinyColor.fromHSL(color);
+TinyColor.fromHSLColor(color);
 ```
 
 ### From `HSVColor`
