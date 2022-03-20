@@ -3,6 +3,7 @@
 ## [2.1.0] - TBA
 
 ### Changed
+* Rename constructors and methods per Dart & Flutter naming conventions at [PR #41](https://github.com/TinyCommunity/tinycolor2/pull/41)
 * `HslColor` class is now deprecated in favor of native `HSLColor` at [PR #18](https://github.com/TinyCommunity/tinycolor2/pull/35)
 * Deprecated TinyColor.fromRGB() at [PR #40](https://github.com/TinyCommunity/tinycolor2/pull/40)
 
