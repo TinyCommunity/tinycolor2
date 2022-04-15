@@ -143,7 +143,7 @@ class TinyColor {
   TinyColor spin(double amount) {
     final hsl = toHSLColor();
     final hue = (hsl.hue + amount) % 360;
-    _color = hsl.withHue(hue < 0 ? 360 + hue : hue)).toColor();
+    _color = hsl.withHue(hue < 0 ? 360 + hue : hue).toColor();
     return this;
   }
 
