@@ -25,7 +25,7 @@ class TinyColor {
       TinyColor.fromColor(Color.fromARGB(a, r, g, b));
 
   @Deprecated('Use TinyColor.fromHSLColor() instead.')
-  factory TinyColor.fromHSL(HSLColor hsl) => TinyColor(hsl.toColor());
+  factory TinyColor.fromHSL(HSLColor hsl) => TinyColor.fromColor(hsl.toColor());
 
   factory TinyColor.fromHSLColor(HSLColor hsl) =>
       TinyColor.fromColor(hsl.toColor());
