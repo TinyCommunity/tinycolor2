@@ -58,6 +58,8 @@ class TinyColor {
     return this;
   }
 
+  Color toColor() => Color(_color.value);
+
   @Deprecated('Use TinyColor.toHSVColor() instead.')
   HSVColor toHsv() => toHSVColor();
 
@@ -159,7 +161,7 @@ class TinyColor {
     return TinyColor.fromHSL(hsl.withHue(hue));
   }
 
-  Color get color => _color;
+  Color get color => toColor();
 
   @override
   bool operator ==(Object other) =>
