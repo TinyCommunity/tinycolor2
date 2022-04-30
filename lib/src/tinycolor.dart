@@ -83,27 +83,28 @@ class TinyColor {
 
   TinyColor brighten([int amount = 10]) {
     final _amount = RangeError.checkValueInInterval(amount, 0, 100, "amount");
+    final p = _amount / 100.0;
     final color = Color.fromARGB(
       _color.alpha,
       math.max(
         0,
         math.min(
           255,
-          _color.red - (255 * -(_amount / 100)).round(),
+          _color.red - (255 * -p).round(),
         ),
       ),
       math.max(
         0,
         math.min(
           255,
-          _color.green - (255 * -(_amount / 100)).round(),
+          _color.green - (255 * -p).round(),
         ),
       ),
       math.max(
         0,
         math.min(
           255,
-          _color.blue - (255 * -(_amount / 100)).round(),
+          _color.blue - (255 * -p).round(),
         ),
       ),
     );
