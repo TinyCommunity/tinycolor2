@@ -10,6 +10,7 @@
 
 ### Fixed
 * Not validating range of parameters at [PR #55](https://github.com/TinyCommunity/tinycolor2/pull/55)
+* Split up test for parameterized tests at [PR #58](https://github.com/TinyCommunity/tinycolor2/pull/58)
 
 ## [2.0.1] - 2022-03-11
 
