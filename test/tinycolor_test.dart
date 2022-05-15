@@ -24,6 +24,15 @@ void main() {
         },
       );
       test(
+        ".toHex8()",
+        () {
+          expect(
+            color!.toHex8(),
+            const "FFFFFFFF",
+          );
+        },
+      );
+      test(
         ".getBrightness()",
         () {
           expect(
