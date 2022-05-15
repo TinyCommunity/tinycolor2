@@ -11,6 +11,8 @@ extension TinyColorExtension on Color {
 
   HSLColor toHSLColor() => TinyColor.fromColor(this).toHSLColor();
 
+  String toHex8() => TinyColor.fromColor(this).toHex8();
+
   /// Lighten the color a given amount, from 0 to 100. Providing 100 will always return white.
   Color lighten([int amount = 10]) =>
       TinyColor.fromColor(this).lighten(amount).color;
