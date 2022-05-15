@@ -28,7 +28,7 @@ void main() {
         () {
           expect(
             color!.toHex8(),
-            const "FFFFFFFF",
+            "FFFFFFFF",
           );
         },
       );
