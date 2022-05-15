@@ -15,10 +15,10 @@ void main() {
         color = null;
       });
       test(
-        ".color",
+        ".toColor()",
         () {
           expect(
-            color!.color,
+            color!.toColor(),
             const Color(0xFFFFFFFF),
           );
         },
@@ -285,10 +285,10 @@ void main() {
       final TinyColor color =
           TinyColor.fromHSLColor(HSLColor.fromColor(const Color(0xFFFFFFFF)));
       test(
-        ".color",
+        ".toColor()",
         () {
           expect(
-            color.color,
+            color.toColor(),
             const Color(0xFFFFFFFF),
           );
         },
@@ -311,10 +311,10 @@ void main() {
       final TinyColor color =
           TinyColor.fromHSVColor(HSVColor.fromColor(const Color(0xFFFFFFFF)));
       test(
-        ".color",
+        ".toColor()",
         () {
           expect(
-            color.color,
+            color.toColor(),
             const Color(0xFFFFFFFF),
           );
         },
