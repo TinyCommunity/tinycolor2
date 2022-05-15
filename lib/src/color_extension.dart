@@ -9,7 +9,7 @@ extension TinyColorExtension on Color {
 
   HSVColor toHSVColor() => TinyColor.fromColor(this).toHSVColor();
 
-  HSLColor toHsl() => TinyColor.fromColor(this).toHsl();
+  HSLColor toHSLColor() => TinyColor.fromColor(this).toHSLColor();
 
   /// Lighten the color a given amount, from 0 to 100. Providing 100 will always return white.
   Color lighten([int amount = 10]) =>
