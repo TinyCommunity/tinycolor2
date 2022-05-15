@@ -26,7 +26,8 @@ extension TinyColorExtension on Color {
       TinyColor.fromColor(this).darken(amount).toColor();
 
   /// Mix the color with pure white, from 0 to 100. Providing 0 will do nothing, providing 100 will always return white.
-  Color tint([int amount = 10]) => TinyColor.fromColor(this).tint(amount).toColor();
+  Color tint([int amount = 10]) =>
+      TinyColor.fromColor(this).tint(amount).toColor();
 
   /// Mix the color with pure black, from 0 to 100. Providing 0 will do nothing, providing 100 will always return black.
   Color shade([int amount = 10]) =>
