@@ -88,122 +88,227 @@ void main() {
           );
         },
       );
-      test(
+      group(
         ".lighten()",
         () {
-          expect(
-            color!.lighten(0).color,
-            const Color(0xFFFFFFFF),
+          test(
+            "0",
+            () {
+              expect(
+                color!.lighten(0).color,
+                const Color(0xFFFFFFFF),
+              );
+            },
           );
-          expect(
-            color!.lighten(100).color,
-            const Color(0xFFFFFFFF),
+          test(
+            "100",
+            () {
+              expect(
+                color!.lighten(100).color,
+                const Color(0xFFFFFFFF),
+              );
+            },
           );
-          expect(
-            color!.lighten().color,
-            const Color(0xFFFFFFFF),
+          test(
+            "default",
+            () {
+              expect(
+                color!.lighten().color,
+                const Color(0xFFFFFFFF),
+              );
+            },
           );
         },
       );
-      test(
+      group(
         ".brighten()",
         () {
-          expect(
-            color!.brighten(0).color,
-            const Color(0xFFFFFFFF),
+          test(
+            "0",
+            () {
+              expect(
+                color!.brighten(0).color,
+                const Color(0xFFFFFFFF),
+              );
+            },
           );
-          expect(
-            color!.brighten(100).color,
-            const Color(0xFFFFFFFF),
+          test(
+            "100",
+            () {
+              expect(
+                color!.brighten(100).color,
+                const Color(0xFFFFFFFF),
+              );
+            },
           );
-          expect(
-            color!.brighten().color,
-            const Color(0xFFFFFFFF),
+          test(
+            "default",
+            () {
+              expect(
+                color!.brighten().color,
+                const Color(0xFFFFFFFF),
+              );
+            },
           );
         },
       );
-      test(
+      group(
         ".darken()",
         () {
-          expect(
-            color!.darken(0).color,
-            const Color(0xFFFFFFFF),
+          test(
+            "0",
+            () {
+              expect(
+                color!.darken(0).color,
+                const Color(0xFFFFFFFF),
+              );
+            },
           );
-          expect(
-            color!.darken(100).color,
-            const Color(0xFF000000),
+          test(
+            "100",
+            () {
+              expect(
+                color!.darken(100).color,
+                const Color(0xFF000000),
+              );
+            },
           );
-          expect(
-            color!.darken().color,
-            const Color(0xFFE6E6E6),
+          test(
+            "default",
+            () {
+              expect(
+                color!.darken().color,
+                const Color(0xFFE6E6E6),
+              );
+            },
           );
         },
       );
-      test(
+      group(
         ".tint()",
         () {
-          expect(
-            color!.tint(0).color,
-            const Color(0xFFFFFFFF),
+          test(
+            "0",
+            () {
+              expect(
+                color!.tint(0).color,
+                const Color(0xFFFFFFFF),
+              );
+            },
           );
-          expect(
-            color!.tint(100).color,
-            const Color(0xFFFFFFFF),
+          test(
+            "100",
+            () {
+              expect(
+                color!.tint(100).color,
+                const Color(0xFFFFFFFF),
+              );
+            },
           );
-          expect(
-            color!.tint().color,
-            const Color(0xFFFFFFFF),
+          test(
+            "default",
+            () {
+              expect(
+                color!.tint().color,
+                const Color(0xFFFFFFFF),
+              );
+            },
           );
         },
       );
-      test(
+      group(
         ".shade()",
         () {
-          expect(
-            color!.shade(0).color,
-            const Color(0xFFFFFFFF),
+          test(
+            "0",
+            () {
+              expect(
+                color!.shade(0).color,
+                const Color(0xFFFFFFFF),
+              );
+            },
           );
-          expect(
-            color!.shade(100).color,
-            const Color(0xFF000000),
+          test(
+            "100",
+            () {
+              expect(
+                color!.shade(100).color,
+                const Color(0xFF000000),
+              );
+            },
           );
-          expect(
-            color!.shade().color,
-            const Color(0xFFE6E6E6),
+          test(
+            "default",
+            () {
+              expect(
+                color!.shade().color,
+                const Color(0xFFE6E6E6),
+              );
+            },
           );
         },
       );
-      test(
+      group(
         ".desaturate()",
         () {
-          expect(
-            color!.desaturate(0).color,
-            const Color(0xFFFFFFFF),
+          test(
+            "0",
+            () {
+              expect(
+                color!.desaturate(0).color,
+                const Color(0xFFFFFFFF),
+              );
+            },
           );
-          expect(
-            color!.desaturate(100).color,
-            const Color(0xFFFFFFFF),
+          test(
+            "100",
+            () {
+              expect(
+                color!.desaturate(100).color,
+                const Color(0xFFFFFFFF),
+              );
+            },
           );
-          expect(
-            color!.desaturate().color,
-            const Color(0xFFFFFFFF),
+          test(
+            "default",
+            () {
+              expect(
+                color!.desaturate().color,
+                const Color(0xFFFFFFFF),
+              );
+            },
           );
         },
       );
-      test(
+      group(
         ".saturate()",
         () {
-          expect(
-            color!.saturate(0).color,
-            const Color(0xFFFFFFFF),
+          test(
+            "0",
+            () {
+              expect(
+                color!.saturate(0).color,
+                const Color(0xFFFFFFFF),
+              );
+            },
           );
-          expect(
-            color!.saturate(100).color,
-            const Color(0xFFFFFFFF),
+          test(
+            "100",
+            () {
+              expect(
+                color!.saturate(100).color,
+                const Color(0xFFFFFFFF),
+              );
+            },
           );
-          expect(
-            color!.saturate().color,
-            const Color(0xFFFFFFFF),
+          test(
+            "default",
+            () {
+              expect(
+                color!.saturate().color,
+                const Color(0xFFFFFFFF),
+              );
+            },
           );
         },
       );
@@ -216,28 +321,53 @@ void main() {
           );
         },
       );
-      test(
+      group(
         ".spin()",
         () {
-          expect(
-            color!.spin(-360).color,
-            const Color(0xFFFFFFFF),
+          test(
+            "-360",
+            () {
+              expect(
+                color!.spin(-360).color,
+                const Color(0xFFFFFFFF),
+              );
+            },
           );
-          expect(
-            color!.spin(-180).color,
-            const Color(0xFFFFFFFF),
+          test(
+            "-180",
+            () {
+              expect(
+                color!.spin(-180).color,
+                const Color(0xFFFFFFFF),
+              );
+            },
           );
-          expect(
-            color!.spin(0).color,
-            const Color(0xFFFFFFFF),
+          test(
+            "0",
+            () {
+              expect(
+                color!.spin(0).color,
+                const Color(0xFFFFFFFF),
+              );
+            },
           );
-          expect(
-            color!.spin(180).color,
-            const Color(0xFFFFFFFF),
+          test(
+            "180",
+            () {
+              expect(
+                color!.spin(180).color,
+                const Color(0xFFFFFFFF),
+              );
+            },
           );
-          expect(
-            color!.spin(360).color,
-            const Color(0xFFFFFFFF),
+          test(
+            "360",
+            () {
+              expect(
+                color!.spin(360).color,
+                const Color(0xFFFFFFFF),
+              );
+            },
           );
         },
       );
@@ -250,20 +380,35 @@ void main() {
           );
         },
       );
-      test(
+      group(
         ".mix()",
         () {
-          expect(
-            color!.mix(const Color(0xFF000000), 0).color,
-            const Color(0xFFFFFFFF),
+          test(
+            "0",
+            () {
+              expect(
+                color!.mix(const Color(0xFF000000), 0).color,
+                const Color(0xFFFFFFFF),
+              );
+            },
           );
-          expect(
-            color!.mix(const Color(0xFF000000), 100).color,
-            const Color(0xFF000000),
+          test(
+            "100",
+            () {
+              expect(
+                color!.mix(const Color(0xFF000000), 100).color,
+                const Color(0xFF000000),
+              );
+            },
           );
-          expect(
-            color!.mix(const Color(0xFF000000)).color,
-            const Color(0xFF808080),
+          test(
+            "default",
+            () {
+              expect(
+                color!.mix(const Color(0xFF000000)).color,
+                const Color(0xFF808080),
+              );
+            },
           );
         },
       );
