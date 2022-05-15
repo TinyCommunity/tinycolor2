@@ -271,8 +271,8 @@ void main() {
         "==",
         () {
           expect(
-            color! == TinyColor.fromColor(const Color(0xFFFFFFFF)),
-            true,
+            color!,
+            TinyColor.fromColor(const Color(0xFFFFFFFF)),
           );
         },
       );
