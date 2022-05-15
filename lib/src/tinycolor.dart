@@ -15,7 +15,7 @@ class TinyColor {
 
   TinyColor.fromColor(this.originalColor) : _color = Color(originalColor.value);
 
-  @Deprecated('Use TinyColor(Color.fromARGB(a, r, g, b)) instead.')
+  @Deprecated('Use TinyColor.fromColor(Color.fromARGB(a, r, g, b)) instead.')
   factory TinyColor.fromRGB({
     required int r,
     required int g,
@@ -25,7 +25,7 @@ class TinyColor {
       TinyColor.fromColor(Color.fromARGB(a, r, g, b));
 
   @Deprecated('Use TinyColor.fromHSLColor() instead.')
-  factory TinyColor.fromHSL(HSLColor hsl) => TinyColor(hsl.toColor());
+  factory TinyColor.fromHSL(HSLColor hsl) => TinyColor.fromColor(hsl.toColor());
 
   factory TinyColor.fromHSLColor(HSLColor hsl) =>
       TinyColor.fromColor(hsl.toColor());
@@ -58,6 +58,8 @@ class TinyColor {
     return this;
   }
 
+  Color toColor() => Color(_color.value);
+
   @Deprecated('Use TinyColor.toHSVColor() instead.')
   HSVColor toHsv() => toHSVColor();
 
@@ -73,34 +75,36 @@ class TinyColor {
   TinyColor clone() => TinyColor.fromColor(_color);
 
   TinyColor lighten([int amount = 10]) {
+    final p = RangeError.checkValueInInterval(amount, 0, 100, 'amount') / 100;
     final hsl = toHSLColor();
-    final lightness = clamp01(hsl.lightness + amount / 100);
+    final lightness = clamp01(hsl.lightness + p);
     _color = hsl.withLightness(lightness).toColor();
     return this;
   }
 
   TinyColor brighten([int amount = 10]) {
+    final p = RangeError.checkValueInInterval(amount, 0, 100, 'amount') / 100;
     _color = Color.fromARGB(
       _color.alpha,
       math.max(
         0,
         math.min(
           255,
-          _color.red - (255 * -(amount / 100)).round(),
+          _color.red - (255 * -p).round(),
         ),
       ),
       math.max(
         0,
         math.min(
           255,
-          _color.green - (255 * -(amount / 100)).round(),
+          _color.green - (255 * -p).round(),
         ),
       ),
       math.max(
         0,
         math.min(
           255,
-          _color.blue - (255 * -(amount / 100)).round(),
+          _color.blue - (255 * -p).round(),
         ),
       ),
     );
@@ -108,8 +112,9 @@ class TinyColor {
   }
 
   TinyColor darken([int amount = 10]) {
+    final p = RangeError.checkValueInInterval(amount, 0, 100, 'amount') / 100;
     final hsl = toHSLColor();
-    final lightness = clamp01(hsl.lightness - amount / 100);
+    final lightness = clamp01(hsl.lightness - p);
     _color = hsl.withLightness(lightness).toColor();
     return this;
   }
@@ -125,15 +130,17 @@ class TinyColor {
       );
 
   TinyColor desaturate([int amount = 10]) {
+    final p = RangeError.checkValueInInterval(amount, 0, 100, 'amount') / 100;
     final hsl = toHSLColor();
-    final saturation = clamp01(hsl.saturation - amount / 100);
+    final saturation = clamp01(hsl.saturation - p);
     _color = hsl.withSaturation(saturation).toColor();
     return this;
   }
 
   TinyColor saturate([int amount = 10]) {
+    final p = RangeError.checkValueInInterval(amount, 0, 100, 'amount') / 100;
     final hsl = toHSLColor();
-    final saturation = clamp01(hsl.saturation + amount / 100);
+    final saturation = clamp01(hsl.saturation + p);
     _color = hsl.withSaturation(saturation).toColor();
     return this;
   }
@@ -148,7 +155,7 @@ class TinyColor {
   }
 
   TinyColor mix(Color toColor, [int amount = 50]) {
-    final p = amount / 100.0;
+    final p = RangeError.checkValueInInterval(amount, 0, 100, 'amount') / 100;
     _color = Color.fromARGB(
       ((toColor.alpha - _color.alpha) * p + _color.alpha).round(),
       ((toColor.red - _color.red) * p + _color.red).round(),
@@ -165,7 +172,7 @@ class TinyColor {
     return this;
   }
 
-  Color get color => _color;
+  Color get color => toColor();
 
   @override
   bool operator ==(Object other) =>

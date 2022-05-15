@@ -7,13 +7,28 @@ void main() {
   group(
     "TinyColor.fromColor()",
     () {
-      final TinyColor color = TinyColor.fromColor(const Color(0xFFFFFFFF));
+      TinyColor? color;
+      setUp(() {
+        color = TinyColor.fromColor(const Color(0xFFFFFFFF));
+      });
+      tearDown(() {
+        color = null;
+      });
       test(
-        ".color",
+        ".toColor()",
         () {
           expect(
-            color.color,
+            color!.toColor(),
             const Color(0xFFFFFFFF),
+          );
+        },
+      );
+      test(
+        ".toHex8()",
+        () {
+          expect(
+            color!.toHex8(),
+            "ffffffff",
           );
         },
       );
@@ -21,7 +36,7 @@ void main() {
         ".getBrightness()",
         () {
           expect(
-            color.getBrightness(),
+            color!.getBrightness(),
             255,
           );
         },
@@ -30,7 +45,7 @@ void main() {
         ".isLight()",
         () {
           expect(
-            color.isLight(),
+            color!.isLight(),
             true,
           );
         },
@@ -39,7 +54,7 @@ void main() {
         ".isDark()",
         () {
           expect(
-            color.isDark(),
+            color!.isDark(),
             false,
           );
         },
@@ -48,7 +63,7 @@ void main() {
         ".getLuminance()",
         () {
           expect(
-            color.getLuminance(),
+            color!.getLuminance(),
             const Color(0xFFFFFFFF).computeLuminance(),
           );
         },
@@ -56,10 +71,8 @@ void main() {
       test(
         ".setAlpha()",
         () {
-          final TinyColor newColor =
-              TinyColor.fromColor(const Color(0xFFFFFFFF));
           expect(
-            newColor.setAlpha(0x00).color.alpha,
+            color!.setAlpha(0x00).color.alpha,
             0x00,
           );
         },
@@ -67,12 +80,10 @@ void main() {
       test(
         ".setOpacity()",
         () {
-          final TinyColor newColor =
-              TinyColor.fromColor(const Color(0xFFFFFFFF));
           // underlying dart implementation converts the opacity value to an
           // int, then back into a double. Thus some precision is loss.
           expect(
-            newColor.setOpacity(0.5).color.opacity,
+            color!.setOpacity(0.5).color.opacity,
             moreOrLessEquals(0.5, epsilon: 1e-2),
           );
         },
@@ -80,18 +91,16 @@ void main() {
       test(
         ".lighten()",
         () {
-          final TinyColor newColor =
-              TinyColor.fromColor(const Color(0xFFFFFFFF));
           expect(
-            newColor.lighten(0).color,
+            color!.lighten(0).color,
             const Color(0xFFFFFFFF),
           );
           expect(
-            newColor.lighten(100).color,
+            color!.lighten(100).color,
             const Color(0xFFFFFFFF),
           );
           expect(
-            newColor.lighten().color,
+            color!.lighten().color,
             const Color(0xFFFFFFFF),
           );
         },
@@ -99,18 +108,16 @@ void main() {
       test(
         ".brighten()",
         () {
-          final TinyColor newColor =
-              TinyColor.fromColor(const Color(0xFFFFFFFF));
           expect(
-            newColor.brighten(0).color,
+            color!.brighten(0).color,
             const Color(0xFFFFFFFF),
           );
           expect(
-            newColor.brighten(100).color,
+            color!.brighten(100).color,
             const Color(0xFFFFFFFF),
           );
           expect(
-            newColor.brighten().color,
+            color!.brighten().color,
             const Color(0xFFFFFFFF),
           );
         },
@@ -118,18 +125,16 @@ void main() {
       test(
         ".darken()",
         () {
-          final TinyColor newColor =
-              TinyColor.fromColor(const Color(0xFFFFFFFF));
           expect(
-            newColor.darken(0).color,
+            color!.darken(0).color,
             const Color(0xFFFFFFFF),
           );
           expect(
-            newColor.darken(100).color,
+            color!.darken(100).color,
             const Color(0xFF000000),
           );
           expect(
-            newColor.darken().color,
+            color!.darken().color,
             const Color(0xFFE6E6E6),
           );
         },
@@ -137,18 +142,16 @@ void main() {
       test(
         ".tint()",
         () {
-          final TinyColor newColor =
-              TinyColor.fromColor(const Color(0xFFFFFFFF));
           expect(
-            newColor.tint(0).color,
+            color!.tint(0).color,
             const Color(0xFFFFFFFF),
           );
           expect(
-            newColor.tint(100).color,
+            color!.tint(100).color,
             const Color(0xFFFFFFFF),
           );
           expect(
-            newColor.tint().color,
+            color!.tint().color,
             const Color(0xFFFFFFFF),
           );
         },
@@ -156,18 +159,16 @@ void main() {
       test(
         ".shade()",
         () {
-          final TinyColor newColor =
-              TinyColor.fromColor(const Color(0xFFFFFFFF));
           expect(
-            newColor.shade(0).color,
+            color!.shade(0).color,
             const Color(0xFFFFFFFF),
           );
           expect(
-            newColor.shade(100).color,
+            color!.shade(100).color,
             const Color(0xFF000000),
           );
           expect(
-            newColor.shade().color,
+            color!.shade().color,
             const Color(0xFFE6E6E6),
           );
         },
@@ -175,18 +176,16 @@ void main() {
       test(
         ".desaturate()",
         () {
-          final TinyColor newColor =
-              TinyColor.fromColor(const Color(0xFFFFFFFF));
           expect(
-            newColor.desaturate(0).color,
+            color!.desaturate(0).color,
             const Color(0xFFFFFFFF),
           );
           expect(
-            newColor.desaturate(100).color,
+            color!.desaturate(100).color,
             const Color(0xFFFFFFFF),
           );
           expect(
-            newColor.desaturate().color,
+            color!.desaturate().color,
             const Color(0xFFFFFFFF),
           );
         },
@@ -194,18 +193,16 @@ void main() {
       test(
         ".saturate()",
         () {
-          final TinyColor newColor =
-              TinyColor.fromColor(const Color(0xFFFFFFFF));
           expect(
-            newColor.saturate(0).color,
+            color!.saturate(0).color,
             const Color(0xFFFFFFFF),
           );
           expect(
-            newColor.saturate(100).color,
+            color!.saturate(100).color,
             const Color(0xFFFFFFFF),
           );
           expect(
-            newColor.saturate().color,
+            color!.saturate().color,
             const Color(0xFFFFFFFF),
           );
         },
@@ -213,10 +210,8 @@ void main() {
       test(
         ".greyscale()",
         () {
-          final TinyColor newColor =
-              TinyColor.fromColor(const Color(0xFFFFFFFF));
           expect(
-            newColor.greyscale().color,
+            color!.greyscale().color,
             const Color(0xFFFFFFFF),
           );
         },
@@ -224,26 +219,24 @@ void main() {
       test(
         ".spin()",
         () {
-          final TinyColor newColor =
-              TinyColor.fromColor(const Color(0xFFFFFFFF));
           expect(
-            newColor.spin(-360).color,
+            color!.spin(-360).color,
             const Color(0xFFFFFFFF),
           );
           expect(
-            newColor.spin(-180).color,
+            color!.spin(-180).color,
             const Color(0xFFFFFFFF),
           );
           expect(
-            newColor.spin(0).color,
+            color!.spin(0).color,
             const Color(0xFFFFFFFF),
           );
           expect(
-            newColor.spin(180).color,
+            color!.spin(180).color,
             const Color(0xFFFFFFFF),
           );
           expect(
-            newColor.spin(360).color,
+            color!.spin(360).color,
             const Color(0xFFFFFFFF),
           );
         },
@@ -251,10 +244,8 @@ void main() {
       test(
         ".complement()",
         () {
-          final TinyColor newColor =
-              TinyColor.fromColor(const Color(0xFFFFFFFF));
           expect(
-            newColor.complement().color,
+            color!.complement().color,
             const Color(0xFFFFFFFF),
           );
         },
@@ -262,18 +253,16 @@ void main() {
       test(
         ".mix()",
         () {
-          final TinyColor newColor =
-              TinyColor.fromColor(const Color(0xFFFFFFFF));
           expect(
-            newColor.mix(const Color(0xFF000000), 0).color,
+            color!.mix(const Color(0xFF000000), 0).color,
             const Color(0xFFFFFFFF),
           );
           expect(
-            newColor.mix(const Color(0xFF000000), 100).color,
+            color!.mix(const Color(0xFF000000), 100).color,
             const Color(0xFF000000),
           );
           expect(
-            newColor.mix(const Color(0xFF000000)).color,
+            color!.mix(const Color(0xFF000000)).color,
             const Color(0xFF808080),
           );
         },
@@ -282,7 +271,7 @@ void main() {
         ".clone()",
         () {
           expect(
-            color.clone(),
+            color!.clone(),
             TinyColor.fromColor(const Color(0xFFFFFFFF)),
           );
         },
@@ -291,8 +280,8 @@ void main() {
         "==",
         () {
           expect(
-            color == TinyColor.fromColor(const Color(0xFFFFFFFF)),
-            true,
+            color!,
+            TinyColor.fromColor(const Color(0xFFFFFFFF)),
           );
         },
       );
@@ -305,10 +294,10 @@ void main() {
       final TinyColor color =
           TinyColor.fromHSLColor(HSLColor.fromColor(const Color(0xFFFFFFFF)));
       test(
-        ".color",
+        ".toColor()",
         () {
           expect(
-            color.color,
+            color.toColor(),
             const Color(0xFFFFFFFF),
           );
         },
@@ -331,10 +320,10 @@ void main() {
       final TinyColor color =
           TinyColor.fromHSVColor(HSVColor.fromColor(const Color(0xFFFFFFFF)));
       test(
-        ".color",
+        ".toColor()",
         () {
           expect(
-            color.color,
+            color.toColor(),
             const Color(0xFFFFFFFF),
           );
         },
