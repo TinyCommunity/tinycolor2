@@ -11,6 +11,7 @@
 ### Fixed
 * Not validating range of parameters at [PR #55](https://github.com/TinyCommunity/tinycolor2/pull/55)
 * Split up test for parameterized tests at [PR #58](https://github.com/TinyCommunity/tinycolor2/pull/58)
+* Most setters should update internal color value and return this at [PR #42](https://github.com/TinyCommunity/tinycolor2/pull/42)
 
 ## [2.0.1] - 2022-03-11
 
