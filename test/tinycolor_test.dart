@@ -18,7 +18,7 @@ void main() {
         ".color",
         () {
           expect(
-            color.color,
+            color!.color,
             const Color(0xFFFFFFFF),
           );
         },
@@ -27,7 +27,7 @@ void main() {
         ".getBrightness()",
         () {
           expect(
-            color.getBrightness(),
+            color!.getBrightness(),
             255,
           );
         },
@@ -36,7 +36,7 @@ void main() {
         ".isLight()",
         () {
           expect(
-            color.isLight(),
+            color!.isLight(),
             true,
           );
         },
@@ -45,7 +45,7 @@ void main() {
         ".isDark()",
         () {
           expect(
-            color.isDark(),
+            color!.isDark(),
             false,
           );
         },
@@ -54,7 +54,7 @@ void main() {
         ".getLuminance()",
         () {
           expect(
-            color.getLuminance(),
+            color!.getLuminance(),
             const Color(0xFFFFFFFF).computeLuminance(),
           );
         },
@@ -63,7 +63,7 @@ void main() {
         ".setAlpha()",
         () {
           expect(
-            color.setAlpha(0x00).color.alpha,
+            color!.setAlpha(0x00).color.alpha,
             0x00,
           );
         },
@@ -74,7 +74,7 @@ void main() {
           // underlying dart implementation converts the opacity value to an
           // int, then back into a double. Thus some precision is loss.
           expect(
-            color.setOpacity(0.5).color.opacity,
+            color!.setOpacity(0.5).color.opacity,
             moreOrLessEquals(0.5, epsilon: 1e-2),
           );
         },
@@ -83,15 +83,15 @@ void main() {
         ".lighten()",
         () {
           expect(
-            color.lighten(0).color,
+            color!.lighten(0).color,
             const Color(0xFFFFFFFF),
           );
           expect(
-            color.lighten(100).color,
+            color!.lighten(100).color,
             const Color(0xFFFFFFFF),
           );
           expect(
-            color.lighten().color,
+            color!.lighten().color,
             const Color(0xFFFFFFFF),
           );
         },
@@ -100,15 +100,15 @@ void main() {
         ".brighten()",
         () {
           expect(
-            color.brighten(0).color,
+            color!.brighten(0).color,
             const Color(0xFFFFFFFF),
           );
           expect(
-            color.brighten(100).color,
+            color!.brighten(100).color,
             const Color(0xFFFFFFFF),
           );
           expect(
-            color.brighten().color,
+            color!.brighten().color,
             const Color(0xFFFFFFFF),
           );
         },
@@ -117,15 +117,15 @@ void main() {
         ".darken()",
         () {
           expect(
-            color.darken(0).color,
+            color!.darken(0).color,
             const Color(0xFFFFFFFF),
           );
           expect(
-            color.darken(100).color,
+            color!.darken(100).color,
             const Color(0xFF000000),
           );
           expect(
-            color.darken().color,
+            color!.darken().color,
             const Color(0xFFE6E6E6),
           );
         },
@@ -134,15 +134,15 @@ void main() {
         ".tint()",
         () {
           expect(
-            color.tint(0).color,
+            color!.tint(0).color,
             const Color(0xFFFFFFFF),
           );
           expect(
-            color.tint(100).color,
+            color!.tint(100).color,
             const Color(0xFFFFFFFF),
           );
           expect(
-            color.tint().color,
+            color!.tint().color,
             const Color(0xFFFFFFFF),
           );
         },
@@ -151,15 +151,15 @@ void main() {
         ".shade()",
         () {
           expect(
-            color.shade(0).color,
+            color!.shade(0).color,
             const Color(0xFFFFFFFF),
           );
           expect(
-            color.shade(100).color,
+            color!.shade(100).color,
             const Color(0xFF000000),
           );
           expect(
-            color.shade().color,
+            color!.shade().color,
             const Color(0xFFE6E6E6),
           );
         },
@@ -168,15 +168,15 @@ void main() {
         ".desaturate()",
         () {
           expect(
-            color.desaturate(0).color,
+            color!.desaturate(0).color,
             const Color(0xFFFFFFFF),
           );
           expect(
-            color.desaturate(100).color,
+            color!.desaturate(100).color,
             const Color(0xFFFFFFFF),
           );
           expect(
-            color.desaturate().color,
+            color!.desaturate().color,
             const Color(0xFFFFFFFF),
           );
         },
@@ -185,15 +185,15 @@ void main() {
         ".saturate()",
         () {
           expect(
-            color.saturate(0).color,
+            color!.saturate(0).color,
             const Color(0xFFFFFFFF),
           );
           expect(
-            color.saturate(100).color,
+            color!.saturate(100).color,
             const Color(0xFFFFFFFF),
           );
           expect(
-            color.saturate().color,
+            color!.saturate().color,
             const Color(0xFFFFFFFF),
           );
         },
@@ -202,7 +202,7 @@ void main() {
         ".greyscale()",
         () {
           expect(
-            color.greyscale().color,
+            color!.greyscale().color,
             const Color(0xFFFFFFFF),
           );
         },
@@ -211,23 +211,23 @@ void main() {
         ".spin()",
         () {
           expect(
-            color.spin(-360).color,
+            color!.spin(-360).color,
             const Color(0xFFFFFFFF),
           );
           expect(
-            color.spin(-180).color,
+            color!.spin(-180).color,
             const Color(0xFFFFFFFF),
           );
           expect(
-            color.spin(0).color,
+            color!.spin(0).color,
             const Color(0xFFFFFFFF),
           );
           expect(
-            color.spin(180).color,
+            color!.spin(180).color,
             const Color(0xFFFFFFFF),
           );
           expect(
-            color.spin(360).color,
+            color!.spin(360).color,
             const Color(0xFFFFFFFF),
           );
         },
@@ -236,7 +236,7 @@ void main() {
         ".complement()",
         () {
           expect(
-            color.complement().color,
+            color!.complement().color,
             const Color(0xFFFFFFFF),
           );
         },
@@ -245,15 +245,15 @@ void main() {
         ".mix()",
         () {
           expect(
-            color.mix(const Color(0xFF000000), 0).color,
+            color!.mix(const Color(0xFF000000), 0).color,
             const Color(0xFFFFFFFF),
           );
           expect(
-            color.mix(const Color(0xFF000000), 100).color,
+            color!.mix(const Color(0xFF000000), 100).color,
             const Color(0xFF000000),
           );
           expect(
-            color.mix(const Color(0xFF000000)).color,
+            color!.mix(const Color(0xFF000000)).color,
             const Color(0xFF808080),
           );
         },
@@ -262,7 +262,7 @@ void main() {
         ".clone()",
         () {
           expect(
-            color.clone(),
+            color!.clone(),
             TinyColor.fromColor(const Color(0xFFFFFFFF)),
           );
         },
@@ -271,7 +271,7 @@ void main() {
         "==",
         () {
           expect(
-            color == TinyColor.fromColor(const Color(0xFFFFFFFF)),
+            color! == TinyColor.fromColor(const Color(0xFFFFFFFF)),
             true,
           );
         },
