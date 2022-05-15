@@ -47,6 +47,13 @@ extension TinyColorExtension on Color {
   Color spin([double amount = 0]) =>
       TinyColor.fromColor(this).spin(amount).color;
 
+  /// Blends the color with another color a given amount, from 0 - 100, default 50.
+  Color mix(Color toColor, [int amount = 50]) =>
+      TinyColor.fromColor(this).mix(toColor, amount).color;
+
+  /// Returns the complementary color for dynamic matching
+  Color complement() => TinyColor.fromColor(this).complement().color;
+
   /// Returns the perceived brightness of a color, from 0-255, as defined by Web Content Accessibility Guidelines (Version 1.0).Returns the perceived brightness of a color, from 0-255, as defined by Web Content Accessibility Guidelines (Version 1.0).
   double get brightness => TinyColor.fromColor(this).getBrightness();
 
@@ -58,11 +65,4 @@ extension TinyColorExtension on Color {
 
   /// Return a boolean indicating whether the color's perceived brightness is dark.
   bool get isDark => TinyColor.fromColor(this).isDark();
-
-  /// Returns the complementary color for dynamic matching
-  Color complement() => TinyColor.fromColor(this).complement().color;
-
-  /// Blends the color with another color a given amount, from 0 - 100, default 50.
-  Color mix(Color toColor, [int amount = 50]) =>
-      TinyColor.fromColor(this).mix(toColor, amount).color;
 }
