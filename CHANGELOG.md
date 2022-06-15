@@ -7,6 +7,7 @@
 * `HslColor` class is now deprecated in favor of native `HSLColor` at [PR #18](https://github.com/TinyCommunity/tinycolor2/pull/35)
 * Deprecated TinyColor.fromRGB() at [PR #40](https://github.com/TinyCommunity/tinycolor2/pull/40)
 * Refactor and improve tests at [PR #57](https://github.com/TinyCommunity/tinycolor2/pull/57)
+* Update extension codes to remove usage of deprecated methods and add new methods at [PR #59](https://github.com/TinyCommunity/tinycolor2/pull/59)
 
 ### Fixed
 * Not validating range of parameters at [PR #55](https://github.com/TinyCommunity/tinycolor2/pull/55)
