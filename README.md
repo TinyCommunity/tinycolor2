@@ -76,7 +76,7 @@ final HSVColor color = TinyColor.fromColor(Colors.white).toHSVColor();
 
 ### Properties
 
-### `.isLight()`
+#### `.isLight()`
 
 Return a boolean indicating whether the color's perceived brightness is light.
 
@@ -87,7 +87,7 @@ TinyColor.fromString("#000000").isLight(); // false
 Colors.white.isLight;  // true
 ```
 
-### `.isDark()`
+#### `.isDark()`
 
 Return a boolean indicating whether the color's perceived brightness is dark.
 
@@ -98,7 +98,7 @@ TinyColor.fromString("#000000").isDark(); // true
 Colors.white.isDark;  // false
 ```
 
-### `.getBrightness()`
+#### `.getBrightness()`
 
 Returns the perceived brightness of a color, from `0` to `255`, as defined by [Web Content Accessibility Guidelines (Version 1.0)](https://www.w3.org/TR/AERT#color-contrast).
 
@@ -109,7 +109,7 @@ TinyColor.fromString("#000000").getBrightness(); // 0
 Colors.grey.brightness;  // 127
 ```
 
-### `.getLuminance()`
+#### `.getLuminance()`
 
 Return the perceived luminance of a color, a shorthand for flutter `Color.computeLuminance()`
 
