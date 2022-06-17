@@ -286,3 +286,20 @@ TinyColor.fromColor(Colors.red).mix(TinyColor.fromColor(Colors.yellow, 20)).colo
 // or with Color extension
 Colors.red.mix(Colors.yellow, 20);
 ```
+
+## Extensions
+
+All methods listed above are included in extensions. Note that some methods has changed to return a `bool` or `double` value instead to match with Dart approach, and the rest would return its original class type instead of `TinyColor`.
+
+### `Color`
+
+```dart
+final TinyColor color = Colors.black.toTinyColor();
+final HSVColor hsv = Colors.white.toHSVColor();
+final HSLColor hsl = Colors.white.toHSLColor();
+final bool isDark = Colors.yellow.isDark;
+final bool isLight = Colors.red.isLight;
+final double luminance = Colors.blue.luminance;
+final double brightness = Colors.blue.brightness;
+final Color newColor = Colors.green.mix(Colors.white, 50);
+```
