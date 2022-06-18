@@ -12,7 +12,7 @@ import 'package:tinycolor2/tinycolor2.dart';
 
 final TinyColor tinyColor = TinyColor.fromColor(Colors.green);
 ```
-Now you can also use the package to extend the native `Color` class with all the same features, but simpler. To use extension update, make sure to change envieronment sdk version in pubspec like this: ` sdk: ">=2.6.0 <3.0.0"`
+Now you can also use the package to extend the native `Color` class with all the same features, but simpler.
 
 ## Constructors
 
