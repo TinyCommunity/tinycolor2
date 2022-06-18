@@ -20,8 +20,6 @@ Now you can also use the package to extend the native `Color` class with all the
 
 ```dart
 TinyColor.fromColor(Colors.blue);
-// or with Color extension
-Colors.blue.toTinyColor();
 ```
 
 ### From a Hex String
