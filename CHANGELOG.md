@@ -1,6 +1,6 @@
 # Changelog
 
-## [2.1.0] - TBA
+## [2.1.0] - 2022-06-20
 
 ### Changed
 * Rename constructors and methods per Dart & Flutter naming conventions at [PR #41](https://github.com/TinyCommunity/tinycolor2/pull/41)
