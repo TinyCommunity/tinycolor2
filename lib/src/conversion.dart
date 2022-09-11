@@ -1,8 +1,7 @@
 import 'dart:math' as math;
 
 import 'package:flutter/painting.dart' show Color, HSLColor, HSVColor;
-
-import 'util.dart';
+import 'package:tinycolor2/src/util.dart';
 
 HSLColor rgbToHsl({
   required double r,

@@ -2,8 +2,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/painting.dart' show Color, HSLColor, HSVColor;
 import 'package:pigment/pigment.dart';
-
-import 'util.dart';
+import 'package:tinycolor2/src/util.dart';
 
 class TinyColor {
   final Color originalColor;
