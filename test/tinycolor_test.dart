@@ -1,5 +1,4 @@
 import 'package:flutter/painting.dart' show Color, HSLColor, HSVColor;
-
 import 'package:flutter_test/flutter_test.dart';
 import 'package:tinycolor2/tinycolor2.dart';
 
@@ -425,7 +424,7 @@ void main() {
         "==",
         () {
           expect(
-            color!,
+            color,
             TinyColor.fromColor(const Color(0xFFFFFFFF)),
           );
         },
