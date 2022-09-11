@@ -1,5 +1,9 @@
 # Changelog
 
+## [Unreleased]
+
+- Upgrade to Flutter 3.3.0
+
 ## [2.1.0] - 2022-06-20
 
 ### Changed
