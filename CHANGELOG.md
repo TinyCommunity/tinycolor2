@@ -1,8 +1,9 @@
 # Changelog
 
-## [Unreleased]
+## [3.0.0] - 2022-09-12
 
 - Upgrade to Flutter 3.3.0
+- Upgrade lint package to 1.1.0
 
 ## [2.1.0] - 2022-06-20
 
