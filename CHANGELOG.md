@@ -1,5 +1,9 @@
 # Changelog
 
+## [3.0.1] - 2022-09-15
+
+- Correct pubspec Flutter + Dart SDK versions at [PR #64](https://github.com/TinyCommunity/tinycolor2/pull/64) 
+
 ## [3.0.0] - 2022-09-12
 
 - Upgrade to Flutter 3.3.0
