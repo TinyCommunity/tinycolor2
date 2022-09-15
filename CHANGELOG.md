@@ -8,7 +8,7 @@
 ## [3.0.0] - 2022-09-12
 
 ### Changed
-- Upgrade to Flutter 3.3.0 + Upgrade lint package to 1.1.0 at [PR #63](https://github.com/TinyCommunity/tinycolor2/pull/63)
+- Upgrade to Flutter 3.3.0 + Upgrade lint package to 1.10.0 at [PR #63](https://github.com/TinyCommunity/tinycolor2/pull/63)
 
 ## [2.1.0] - 2022-06-20
 
