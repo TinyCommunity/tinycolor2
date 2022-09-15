@@ -2,12 +2,13 @@
 
 ## [3.0.1] - 2022-09-15
 
-- Correct pubspec Flutter + Dart SDK versions at [PR #64](https://github.com/TinyCommunity/tinycolor2/pull/64) 
+### Fixed
+- Correct pubspec Flutter + Dart SDK versions at [PR #64](https://github.com/TinyCommunity/tinycolor2/pull/64)
 
 ## [3.0.0] - 2022-09-12
 
-- Upgrade to Flutter 3.3.0
-- Upgrade lint package to 1.1.0
+### Changed
+- Upgrade to Flutter 3.3.0 + Upgrade lint package to 1.1.0 at [PR #63](https://github.com/TinyCommunity/tinycolor2/pull/63)
 
 ## [2.1.0] - 2022-06-20
 
