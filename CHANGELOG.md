@@ -1,9 +1,10 @@
 # Changelog
 
-## [3.0.1] - 2022-09-15
+## [3.0.1] - 2022-09-19
 
 ### Fixed
 - Correct pubspec Flutter + Dart SDK versions at [PR #64](https://github.com/TinyCommunity/tinycolor2/pull/64)
+- Remove upper bound in pubspec Flutter + Dart SDK versions at [PR #65](https://github.com/TinyCommunity/tinycolor2/pull/65)
 
 ## [3.0.0] - 2022-09-12
 
